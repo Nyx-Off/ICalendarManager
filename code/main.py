@@ -59,7 +59,8 @@ class CalendarManager:
         calendar = self.get_calendar_data()
 
         now = datetime.datetime.now(pytz.utc)
-        start_next_week = now + datetime.timedelta(days=7-now.weekday())
+        days_until_next_monday = (7 - now.weekday()) % 7  # Nombre de jours jusqu'au prochain lundi (0 = lundi, 6 = dimanche)
+        start_next_week = now + datetime.timedelta(days=0) # Début de la semaine prochaine
         end_next_week = start_next_week + datetime.timedelta(days=7)
 
         events_next_week = []

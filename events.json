@@ -1,5 +1,17 @@
 [
     {
+        "summary": "Linux, Principes et Programmation - M. BARBIER",
+        "start": "2024-01-29T08:30:00+00:00",
+        "end": "2024-01-29T12:00:00+00:00",
+        "location": "PO-0.56 (30)"
+    },
+    {
+        "summary": "Linux, Principes et Programmation - M. BARBIER",
+        "start": "2024-01-29T13:00:00+00:00",
+        "end": "2024-01-29T16:30:00+00:00",
+        "location": "PO-0.56 (30)"
+    },
+    {
         "summary": "Programmation orient\u00e9e objet avanc\u00e9e - M. ILOGA BIYIK",
         "start": "2024-01-30T08:30:00+00:00",
         "end": "2024-01-30T12:00:00+00:00",
@@ -39,18 +51,6 @@
         "summary": "Anglais - Mme HARRINGTON",
         "start": "2024-02-01T13:00:00+00:00",
         "end": "2024-02-01T16:30:00+00:00",
-        "location": "PO-0.56 (30)"
-    },
-    {
-        "summary": "Paradigmes de programmation - M. FLEURY",
-        "start": "2024-02-02T08:30:00+00:00",
-        "end": "2024-02-02T12:00:00+00:00",
-        "location": "PO-0.56 (30)"
-    },
-    {
-        "summary": "Paradigmes de programmation - M. FLEURY",
-        "start": "2024-02-02T13:00:00+00:00",
-        "end": "2024-02-02T16:30:00+00:00",
         "location": "PO-0.56 (30)"
     }
 ]
