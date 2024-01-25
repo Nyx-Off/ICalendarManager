@@ -124,17 +124,17 @@ class DiscordBot:
     def format_events_message(self, events):
         message = "Emploi du temps pour la semaine prochaine:\n"
         for event in events:
-            location_str = f" à {event.location}" if event.location else ""
+            location_str = f" en {event.location}" if event.location else ""
             message += f"{event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
         return message
 
     def format_change_alert(self, added, removed):
         message = "Changements dans l'emploi du temps:\n"
         for event in added:
-            location_str = f" à {event.location}" if event.location else ""
+            location_str = f" en {event.location}" if event.location else ""
             message += f"Ajouté: {event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
         for event in removed:
-            location_str = f" à {event.location}" if event.location else ""
+            location_str = f" en {event.location}" if event.location else ""
             message += f"Supprimé: {event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
         return message
 
@@ -149,7 +149,7 @@ def main():
         alert_message = discord_bot.format_change_alert(added, removed)
         discord_bot.send_message(alert_message)
 
-    if datetime.datetime.now().weekday() == 5:  # Samedi
+    if datetime.datetime.now().weekday() == 3:  # Samedi
         if not calendar_manager.has_sent_today():
             events_next_week = calendar_manager.get_events_next_week()
             schedule_message = discord_bot.format_events_message(events_next_week)
