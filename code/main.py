@@ -7,19 +7,24 @@ import pytz  # Ajouté pour gérer les fuseaux horaires
 
 # Classe pour représenter un événement
 class Event:
-    def __init__(self, summary, start, end):
+    def __init__(self, summary, start, end, location=None):  # Ajout de 'location'
         self.summary = summary
         self.start = start
         self.end = end
+        self.location = location  # Nouveau champ pour le lieu
 
     def __eq__(self, other):
-        return self.summary == other.summary and self.start == other.start and self.end == other.end
-    
+        return (self.summary == other.summary and 
+                self.start == other.start and 
+                self.end == other.end and 
+                self.location == other.location)
+
     def to_json(self):
         return {
             'summary': self.summary,
             'start': self.start.isoformat(),
-            'end': self.end.isoformat()
+            'end': self.end.isoformat(),
+            'location': self.location  # Inclure le lieu dans le JSON
         }
 
     @staticmethod
@@ -27,7 +32,8 @@ class Event:
         return Event(
             data['summary'],
             datetime.datetime.fromisoformat(data['start']),
-            datetime.datetime.fromisoformat(data['end'])
+            datetime.datetime.fromisoformat(data['end']),
+            data.get('location')  # Récupérer le lieu s'il est disponible
         )
 
 # Classe pour gérer le calendrier ICalendar
@@ -52,8 +58,7 @@ class CalendarManager:
     def get_events_next_week(self):
         calendar = self.get_calendar_data()
 
-        # Assurez-vous que 'now' est dans le même fuseau horaire que les événements du calendrier
-        now = datetime.datetime.now(pytz.utc)  # Utilisez UTC comme fuseau horaire par défaut
+        now = datetime.datetime.now(pytz.utc)
         start_next_week = now + datetime.timedelta(days=7-now.weekday())
         end_next_week = start_next_week + datetime.timedelta(days=7)
 
@@ -63,15 +68,20 @@ class CalendarManager:
                 start = component.get('dtstart').dt
                 end = component.get('dtend').dt
 
-                # Convertir en datetime conscient si nécessaire
                 if start.tzinfo is None or start.tzinfo.utcoffset(start) is None:
                     start = pytz.utc.localize(start)
                 if end.tzinfo is None or end.tzinfo.utcoffset(end) is None:
                     end = pytz.utc.localize(end)
 
-                # Comparer les dates maintenant que toutes sont conscientes
+                location = component.get('location')
+                if location:
+                    location = str(location)
+
+                # Vérifiez si l'événement est dans la semaine suivante
                 if start_next_week <= start < end_next_week:
-                    events_next_week.append(Event(component.get('summary'), start, end))
+                    location = component.get('location')
+                    location = str(location) if location else None
+                    events_next_week.append(Event(component.get('summary'), start, end, location))
         return events_next_week
 
     def check_for_changes(self, filename='events.json'):
@@ -86,6 +96,18 @@ class CalendarManager:
 
         self.save_events_to_json(current_events, filename)  # Sauvegarde des événements actuels
         return added, removed
+    
+    def has_sent_today(self, filename='last_sent.json'):
+        try:
+            with open(filename, 'r') as file:
+                last_sent = datetime.datetime.fromisoformat(json.load(file)['last_sent'])
+                return last_sent.date() == datetime.datetime.now().date()
+        except (FileNotFoundError, ValueError, KeyError):
+            return False
+
+    def update_last_sent(self, filename='last_sent.json'):
+        with open(filename, 'w') as file:
+            json.dump({'last_sent': datetime.datetime.now().isoformat()}, file)
 
 # Classe pour gérer le bot Discord
 class DiscordBot:
@@ -102,15 +124,18 @@ class DiscordBot:
     def format_events_message(self, events):
         message = "Emploi du temps pour la semaine prochaine:\n"
         for event in events:
-            message += f"{event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}\n"
+            location_str = f" à {event.location}" if event.location else ""
+            message += f"{event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
         return message
 
     def format_change_alert(self, added, removed):
         message = "Changements dans l'emploi du temps:\n"
         for event in added:
-            message += f"Ajouté: {event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}\n"
+            location_str = f" à {event.location}" if event.location else ""
+            message += f"Ajouté: {event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
         for event in removed:
-            message += f"Supprimé: {event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}\n"
+            location_str = f" à {event.location}" if event.location else ""
+            message += f"Supprimé: {event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
         return message
 
 # Fonction principale
@@ -125,9 +150,11 @@ def main():
         discord_bot.send_message(alert_message)
 
     if datetime.datetime.now().weekday() == 5:  # Samedi
-        events_next_week = calendar_manager.get_events_next_week()
-        schedule_message = discord_bot.format_events_message(events_next_week)
-        discord_bot.send_message(schedule_message)
+        if not calendar_manager.has_sent_today():
+            events_next_week = calendar_manager.get_events_next_week()
+            schedule_message = discord_bot.format_events_message(events_next_week)
+            discord_bot.send_message(schedule_message)
+            calendar_manager.update_last_sent()
 
 if __name__ == "__main__":
     main()
