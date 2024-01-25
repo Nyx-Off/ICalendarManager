@@ -42,14 +42,25 @@ class CalendarManager:
         self.url = url
         self.last_events = []
         
-    def save_events_to_json(self, events, filename='events.json'):
+    def save_events_to_json(self, week_events, filename='events.json'):
         with open(filename, 'w') as file:
-            json.dump([event.to_json() for event in events], file, indent=4)
+            json_data = {date: [event.to_json() for event in events] for date, events in week_events.items()}
+            json.dump(json_data, file, indent=4)
 
     def load_events_from_json(self, filename='events.json'):
-        with open(filename, 'r') as file:
-            data = json.load(file)
-            return [Event.from_json(event) for event in data]
+        try:
+            with open(filename, 'r') as file:
+                file_content = file.read().strip()
+                if not file_content:
+                    return {}  # Retourner un dictionnaire vide si le fichier est vide
+                data = json.loads(file_content)
+                return {date: [Event.from_json(event) for event in events] for date, events in data.items()}
+        except (FileNotFoundError, json.JSONDecodeError):
+            return {}  # Retourner un dictionnaire vide si le fichier n'existe pas ou contient des données invalides
+
+
+    def get_week_days(self, start_date):
+            return [start_date + datetime.timedelta(days=i) for i in range(7)]
 
     def get_calendar_data(self):
         response = requests.get(self.url)
@@ -59,11 +70,12 @@ class CalendarManager:
         calendar = self.get_calendar_data()
 
         now = datetime.datetime.now(pytz.utc)
-        days_until_next_monday = (7 - now.weekday()) % 7  # Nombre de jours jusqu'au prochain lundi (0 = lundi, 6 = dimanche)
-        start_next_week = now + datetime.timedelta(days=0) # Début de la semaine prochaine
-        end_next_week = start_next_week + datetime.timedelta(days=7)
+        start_of_this_week = now - datetime.timedelta(days=now.weekday())
+        start_of_next_week = start_of_this_week + datetime.timedelta(days=7)
+        end_of_next_week = start_of_next_week + datetime.timedelta(days=7)
 
-        events_next_week = []
+        week_events = {day.date().isoformat(): [] for day in self.get_week_days(start_of_this_week) + self.get_week_days(start_of_next_week)}
+
         for component in calendar.walk():
             if component.name == "VEVENT":
                 start = component.get('dtstart').dt
@@ -78,22 +90,28 @@ class CalendarManager:
                 if location:
                     location = str(location)
 
-                # Vérifiez si l'événement est dans la semaine suivante
-                if start_next_week <= start < end_next_week:
-                    location = component.get('location')
-                    location = str(location) if location else None
-                    events_next_week.append(Event(component.get('summary'), start, end, location))
-        return events_next_week
+                # Vérifiez si l'événement est dans la semaine actuelle ou la semaine suivante
+                if start_of_this_week.date() <= start.date() < end_of_next_week.date():
+                    day_key = start.date().isoformat()
+                    week_events[day_key].append(Event(component.get('summary'), start, end, location))
+
+        return week_events
+    
 
     def check_for_changes(self, filename='events.json'):
         current_events = self.get_events_next_week()
         try:
             last_events = self.load_events_from_json(filename)
         except FileNotFoundError:
-            last_events = []
+            last_events = {}
 
-        added = [event for event in current_events if event not in last_events]
-        removed = [event for event in last_events if event not in current_events]
+        added = {}
+        removed = {}
+
+        for date, events in current_events.items():
+            last_events_for_date = last_events.get(date, [])
+            added[date] = [event for event in events if event not in last_events_for_date]
+            removed[date] = [event for event in last_events_for_date if event not in events]
 
         self.save_events_to_json(current_events, filename)  # Sauvegarde des événements actuels
         return added, removed
@@ -122,21 +140,26 @@ class DiscordBot:
         }
         requests.post(self.webhook_url, json=data)
 
-    def format_events_message(self, events):
+    def format_events_message(self, week_events):
         message = "Emploi du temps pour la semaine prochaine:\n"
-        for event in events:
-            location_str = f" en {event.location}" if event.location else ""
-            message += f"{event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
+        for date, events in week_events.items():
+            if events:  # Vérifier si le jour a des événements
+                message += f"\n{date}:\n"
+                for event in events:
+                    location_str = f" en {event.location}" if event.location else ""
+                    message += f"  {event.summary} - {event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}{location_str}\n"
         return message
 
     def format_change_alert(self, added, removed):
         message = "Changements dans l'emploi du temps:\n"
-        for event in added:
-            location_str = f" en {event.location}" if event.location else ""
-            message += f"Ajouté: {event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
-        for event in removed:
-            location_str = f" en {event.location}" if event.location else ""
-            message += f"Supprimé: {event.summary} - {event.start.strftime('%Y-%m-%d %H:%M')} à {event.end.strftime('%Y-%m-%d %H:%M')}{location_str}\n"
+        for date, events in added.items():
+            for event in events:
+                location_str = f" en {event.location}" if event.location else ""
+                message += f"Ajouté le {date}: {event.summary} - {event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}{location_str}\n"
+        for date, events in removed.items():
+            for event in events:
+                location_str = f" en {event.location}" if event.location else ""
+                message += f"Supprimé le {date}: {event.summary} - {event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}{location_str}\n"
         return message
 
 # Fonction principale
@@ -146,15 +169,16 @@ def main():
     discord_bot = DiscordBot('https://discord.com/api/webhooks/1106142739579555891/PhrVe8EPN7wweNuUexTjrxgf6wT1MTPySD8FMcmWC0nRZBPpVfeerV_UHpHuMvyl4p0T')
 
     added, removed = calendar_manager.check_for_changes()
-    if added or removed:
+    if any(added.values()) or any(removed.values()):
         alert_message = discord_bot.format_change_alert(added, removed)
         discord_bot.send_message(alert_message)
 
-    if datetime.datetime.now().weekday() == 3:  # Samedi
+    if datetime.datetime.now().weekday() == 5:  # Samedi
         if not calendar_manager.has_sent_today():
-            events_next_week = calendar_manager.get_events_next_week()
-            schedule_message = discord_bot.format_events_message(events_next_week)
-            discord_bot.send_message(schedule_message)
+            week_events = calendar_manager.get_events_next_week()
+            schedule_message = discord_bot.format_events_message(week_events)
+            if schedule_message.strip() != "Emploi du temps pour la semaine prochaine:":
+                discord_bot.send_message(schedule_message)
             calendar_manager.update_last_sent()
 
 if __name__ == "__main__":
