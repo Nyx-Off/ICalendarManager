@@ -69,6 +69,9 @@ class CalendarManager:
     def get_events_next_week(self):
         calendar = self.get_calendar_data()
 
+        # Définir le fuseau horaire local
+        local_timezone = pytz.timezone('Europe/Paris')
+
         now = datetime.datetime.now(pytz.utc)
         start_of_this_week = now - datetime.timedelta(days=now.weekday())
         start_of_next_week = start_of_this_week + datetime.timedelta(days=7)
@@ -81,10 +84,16 @@ class CalendarManager:
                 start = component.get('dtstart').dt
                 end = component.get('dtend').dt
 
+                # Convertir les dates/heures UTC en fuseau horaire local
                 if start.tzinfo is None or start.tzinfo.utcoffset(start) is None:
-                    start = pytz.utc.localize(start)
+                    start = pytz.utc.localize(start).astimezone(local_timezone)
+                else:
+                    start = start.astimezone(local_timezone)
+
                 if end.tzinfo is None or end.tzinfo.utcoffset(end) is None:
-                    end = pytz.utc.localize(end)
+                    end = pytz.utc.localize(end).astimezone(local_timezone)
+                else:
+                    end = end.astimezone(local_timezone)
 
                 location = component.get('location')
                 if location:
