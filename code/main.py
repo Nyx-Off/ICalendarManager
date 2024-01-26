@@ -8,6 +8,7 @@ import locale
 ICAL_URL = 'Ical URL'
 DISCORD_WEBHOOK_URL = 'Discord Webhook URL'
 
+
 locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
 
 # Classe pour représenter un événement
