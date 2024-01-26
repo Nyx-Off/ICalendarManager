@@ -38,6 +38,24 @@
 - **DiscordBot :** Cette classe est responsable de la communication avec le serveur Discord, en formatant et en envoyant les messages.
 - **Fonction principale (`main`) :** Point d'entrée du script qui orchestre la récupération des événements, leur comparaison et l'envoi des notifications Discord.
 
+## Automatisation avec Cron
+
+### Vue d'ensemble
+Pour garantir que le script `ICalendarManager` s'exécute régulièrement et automatiquement, vous pouvez utiliser Cron, un planificateur de tâches sous Unix. Cron permet de configurer des tâches (connues sous le nom de cron jobs) pour s'exécuter à des intervalles de temps spécifiés. Cela est particulièrement utile pour surveiller constamment les modifications de votre calendrier iCalendar et envoyer des mises à jour via Discord sans intervention manuelle.
+
+### Configuration de Cron Job
+- **Accédez au Cron :** Ouvrez le cron avec la commande `crontab -e`. Cela ouvrira l'éditeur de cron où vous pouvez ajouter des tâches planifiées.
+- **Ajouter un Cron Job :** Ajoutez une ligne suivant le format : 
+  ```
+  * * * * * /chemin/vers/python3 /chemin/vers/ICalendarManager/script.py
+  ```
+  Remplacez `/chemin/vers/python3` et `/chemin/vers/ICalendarManager/script.py` par les chemins appropriés sur votre système. La structure de temps `* * * * *` définit la fréquence d'exécution. Par exemple, `0 * * * *` exécutera le script à chaque heure pile.
+- **Sauvegardez et Quittez :** Après avoir ajouté la ligne, sauvegardez le fichier et quittez l'éditeur. Le cron job est maintenant configuré et actif.
+
+### Fréquence d'Exécution
+- **Personnalisation :** Adaptez la structure de temps selon vos besoins. Par exemple, pour une exécution toutes les 6 heures, utilisez `0 */6 * * *`.
+- **Précision :** Assurez-vous que la fréquence d'exécution correspond à vos besoins. Une fréquence trop élevée pourrait surcharger le serveur, tandis qu'une fréquence trop faible pourrait manquer des mises à jour importantes.
+
 ## Utilisation
 1. Clonez le dépôt ou téléchargez le script `ICalendarManager`.
 2. Modifiez les variables `ICAL_URL` et `DISCORD_WEBHOOK_URL` avec vos propres informations.
