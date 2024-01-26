@@ -2,16 +2,18 @@ from icalendar import Calendar
 import datetime
 import requests
 import json
-import pytz  # Ajouté pour gérer les fuseaux horaires
+import pytz
+import locale
 
+locale.setlocale(locale.LC_TIME, 'fr_FR')
 
 # Classe pour représenter un événement
 class Event:
-    def __init__(self, summary, start, end, location=None):  # Ajout de 'location'
+    def __init__(self, summary, start, end, location=None):  
         self.summary = summary
         self.start = start
         self.end = end
-        self.location = location  # Nouveau champ pour le lieu
+        self.location = location  
 
     def __eq__(self, other):
         return (self.summary == other.summary and 
@@ -24,7 +26,7 @@ class Event:
             'summary': self.summary,
             'start': self.start.isoformat(),
             'end': self.end.isoformat(),
-            'location': self.location  # Inclure le lieu dans le JSON
+            'location': self.location 
         }
 
     @staticmethod
@@ -33,7 +35,7 @@ class Event:
             data['summary'],
             datetime.datetime.fromisoformat(data['start']),
             datetime.datetime.fromisoformat(data['end']),
-            data.get('location')  # Récupérer le lieu s'il est disponible
+            data.get('location') 
         )
 
 # Classe pour gérer le calendrier ICalendar
@@ -52,12 +54,11 @@ class CalendarManager:
             with open(filename, 'r') as file:
                 file_content = file.read().strip()
                 if not file_content:
-                    return {}  # Retourner un dictionnaire vide si le fichier est vide
+                    return {}  
                 data = json.loads(file_content)
                 return {date: [Event.from_json(event) for event in events] for date, events in data.items()}
         except (FileNotFoundError, json.JSONDecodeError):
-            return {}  # Retourner un dictionnaire vide si le fichier n'existe pas ou contient des données invalides
-
+            return {}  
 
     def get_week_days(self, start_date):
             return [start_date + datetime.timedelta(days=i) for i in range(7)]
@@ -69,7 +70,6 @@ class CalendarManager:
     def get_events_next_week(self):
         calendar = self.get_calendar_data()
 
-        # Définir le fuseau horaire local
         local_timezone = pytz.timezone('Europe/Paris')
 
         now = datetime.datetime.now(pytz.utc)
@@ -84,7 +84,6 @@ class CalendarManager:
                 start = component.get('dtstart').dt
                 end = component.get('dtend').dt
 
-                # Convertir les dates/heures UTC en fuseau horaire local
                 if start.tzinfo is None or start.tzinfo.utcoffset(start) is None:
                     start = pytz.utc.localize(start).astimezone(local_timezone)
                 else:
@@ -99,7 +98,6 @@ class CalendarManager:
                 if location:
                     location = str(location)
 
-                # Vérifiez si l'événement est dans la semaine actuelle ou la semaine suivante
                 if start_of_this_week.date() <= start.date() < end_of_next_week.date():
                     day_key = start.date().isoformat()
                     week_events[day_key].append(Event(component.get('summary'), start, end, location))
@@ -122,7 +120,7 @@ class CalendarManager:
             added[date] = [event for event in events if event not in last_events_for_date]
             removed[date] = [event for event in last_events_for_date if event not in events]
 
-        self.save_events_to_json(current_events, filename)  # Sauvegarde des événements actuels
+        self.save_events_to_json(current_events, filename)  
         return added, removed
     
     def has_sent_today(self, filename='last_sent.json'):
@@ -152,7 +150,7 @@ class DiscordBot:
     def format_events_message(self, week_events):
         message = "Emploi du temps pour la semaine prochaine:\n"
         for date, events in week_events.items():
-            if events:  # Vérifier si le jour a des événements
+            if events:  
                 message += f"\n{date}:\n"
                 for event in events:
                     location_str = f" en {event.location}" if event.location else ""
@@ -160,16 +158,74 @@ class DiscordBot:
         return message
 
     def format_change_alert(self, added, removed):
-        message = "Changements dans l'emploi du temps:\n"
+        embeds = []
+
+        # Pour les événements ajoutés (vert)
         for date, events in added.items():
-            for event in events:
-                location_str = f" en {event.location}" if event.location else ""
-                message += f"Ajouté le {date}: {event.summary} - {event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}{location_str}\n"
+            if events:
+                embed = {
+                    "title": f"Ajouté le {datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%A %d %B %Y')}",
+                    "color": 65280,  # Vert
+                    "fields": []
+                }
+                for event in events:
+                    field = {
+                        "name": event.summary,
+                        "value": f"{event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}\n" +
+                                 (f"en salle : {event.location}" if event.location else ""),
+                        "inline": True
+                    }
+                    embed["fields"].append(field)
+                embeds.append(embed)
+
+        # Pour les événements supprimés (rouge)
         for date, events in removed.items():
-            for event in events:
-                location_str = f" en {event.location}" if event.location else ""
-                message += f"Supprimé le {date}: {event.summary} - {event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}{location_str}\n"
-        return message
+            if events:
+                embed = {
+                    "title": f"Supprimé le {datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%A %d %B %Y')}",
+                    "color": 16711680,  # Rouge
+                    "fields": []
+                }
+                for event in events:
+                    field = {
+                        "name": event.summary,
+                        "value": f"{event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}\n" +
+                                 (f"en salle : {event.location}" if event.location else ""),
+                        "inline": True
+                    }
+                    embed["fields"].append(field)
+                embeds.append(embed)
+
+        data = {
+            "content": "@everyone Changements dans l'emploi du temps",
+            "embeds": embeds
+        }
+        requests.post(self.webhook_url, json=data)
+    
+    def send_embed_message(self, week_events):
+        embeds = []
+        for date, events in week_events.items():
+            if events:
+                embed = {
+                    "title": f"{datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%A %d %B %Y')}",
+                    "color": 52479,
+                    "fields": []
+                }
+                for event in events:
+                    field = {
+                        "name": event.summary,
+                        "value": f"{event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}\n" +
+                                 (f"en salle : {event.location}" if event.location else ""),
+                        "inline": True
+                    }
+                    embed["fields"].append(field)
+                embeds.append(embed)
+
+        data = {
+            "content": "@everyone voici l'emploi du temps de la semaine",
+            "embeds": embeds
+        }
+        requests.post(self.webhook_url, json=data)
 
 # Fonction principale
 def main():
@@ -182,12 +238,10 @@ def main():
         alert_message = discord_bot.format_change_alert(added, removed)
         discord_bot.send_message(alert_message)
 
-    if datetime.datetime.now().weekday() == 5:  # Samedi
+    if datetime.datetime.now().weekday() == 4:  # Samedi
         if not calendar_manager.has_sent_today():
             week_events = calendar_manager.get_events_next_week()
-            schedule_message = discord_bot.format_events_message(week_events)
-            if schedule_message.strip() != "Emploi du temps pour la semaine prochaine:":
-                discord_bot.send_message(schedule_message)
+            discord_bot.send_embed_message(week_events)
             calendar_manager.update_last_sent()
 
 if __name__ == "__main__":
