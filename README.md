@@ -1,7 +1,7 @@
-# ICalendarManager
+<h3 align="center"> ICalendarManager </h3>
 
 <div align="center">
-    ![Screen Shot](https://raw.githubusercontent.com/Nyx-Off/ICalendarManager/main/logo.png)
+    <img src="https://raw.githubusercontent.com/Nyx-Off/ICalendarManager/main/logo.png" />
 </div>
 
 ## Aperçu
