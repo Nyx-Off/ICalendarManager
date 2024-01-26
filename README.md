@@ -1,5 +1,9 @@
 # ICalendarManager
 
+<div align="center">
+    ![Screen Shot](https://raw.githubusercontent.com/Nyx-Off/ICalendarManager/main/logo.png)
+</div>
+
 ## Aperçu
 `ICalendarManager` est un script Python conçu pour intégrer des calendriers iCalendar avec Discord, permettant l'automatisation de l'envoi d'informations d'événements et de modifications d'événements via un bot Discord. Le script récupère des événements à partir d'une URL iCalendar, les compare avec les données précédemment enregistrées, et informe via Discord les événements ajoutés ou supprimés, ainsi que l'emploi du temps de la semaine à venir.
 
