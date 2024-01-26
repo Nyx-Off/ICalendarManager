@@ -5,7 +5,10 @@ import json
 import pytz
 import locale
 
-locale.setlocale(locale.LC_TIME, 'fr_FR')
+ICAL_URL = 'https://formations.cci-paris-idf.fr/IntNum/index.php/planning/ical/F7C58369-952C-4F85-BEE0-883FC5F3BF10/'
+DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1106142739579555891/PhrVe8EPN7wweNuUexTjrxgf6wT1MTPySD8FMcmWC0nRZBPpVfeerV_UHpHuMvyl4p0T'
+
+locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
 
 # Classe pour représenter un événement
 class Event:
@@ -40,8 +43,8 @@ class Event:
 
 # Classe pour gérer le calendrier ICalendar
 class CalendarManager:
-    def __init__(self, url):
-        self.url = url
+    def __init__(self):
+        self.url = ICAL_URL
         self.last_events = []
         
     def save_events_to_json(self, week_events, filename='events.json'):
@@ -137,8 +140,9 @@ class CalendarManager:
 
 # Classe pour gérer le bot Discord
 class DiscordBot:
-    def __init__(self, webhook_url):
-        self.webhook_url = webhook_url
+    def __init__(self):
+        self.webhook_url = DISCORD_WEBHOOK_URL
+
 
     def send_message(self, message):
         data = {
@@ -230,9 +234,9 @@ class DiscordBot:
 # Fonction principale
 def main():
     # Utiliser les URL fournies
-    calendar_manager = CalendarManager('https://formations.cci-paris-idf.fr/IntNum/index.php/planning/ical/F7C58369-952C-4F85-BEE0-883FC5F3BF10/')
-    discord_bot = DiscordBot('https://discord.com/api/webhooks/1106142739579555891/PhrVe8EPN7wweNuUexTjrxgf6wT1MTPySD8FMcmWC0nRZBPpVfeerV_UHpHuMvyl4p0T')
-
+    calendar_manager = CalendarManager()
+    discord_bot = DiscordBot()
+    
     added, removed = calendar_manager.check_for_changes()
     if any(added.values()) or any(removed.values()):
         alert_message = discord_bot.format_change_alert(added, removed)
