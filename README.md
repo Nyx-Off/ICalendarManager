@@ -4,80 +4,77 @@
     <img class="Logo" src="https://raw.githubusercontent.com/Nyx-Off/ICalendarManager/main/logo500x500.png" width="500" />
 </div>
 
-## Aperçu
-`ICalendarManager` est un script Python conçu pour intégrer des calendriers iCalendar avec Discord, permettant l'automatisation de l'envoi d'informations d'événements et de modifications d'événements via un bot Discord. Le script récupère des événements à partir d'une URL iCalendar, les compare avec les données précédemment enregistrées, et informe via Discord les événements ajoutés ou supprimés, ainsi que l'emploi du temps de la semaine à venir.
+## Contexte du Projet
+
+J'ai créé ICalendarManager pour récupérer les cours que j'ai et les partager avec ma classe sur Discord. Il permet également d'être notifié en cas de changement d'emploi du temps, ce qui n'est pas une fonctionnalité native de notre plateforme d'emploi du temps. L'idée est de simplifier la communication et de réduire les surprises liées aux changements de dernière minute.
 
 ## Fonctionnalités
-- Récupération d'événements depuis une URL iCalendar.
-- Détection des modifications dans les événements (ajouts et suppressions).
-- Envoi automatique de messages sur Discord pour informer des modifications et de l'emploi du temps hebdomadaire.
 
-## Fonctionnement Détail
+- 🚀 **Téléchargement Automatique du Calendrier** : Le script télécharge automatiquement le fichier ICS contenant l'emploi du temps à partir d'une URL spécifiée.
+- 📢 **Notifications Discord** : Envoie des notifications Discord contenant l'emploi du temps de la semaine actuelle. À partir de samedi, il envoie l'emploi du temps de la semaine suivante.
+- 🔄 **Suivi des Modifications** : Enregistre l'emploi du temps envoyé dans un fichier JSON pour comparer les semaines et éviter les envois redondants. Si des modifications sont détectées (ajouts ou suppressions), seuls les changements sont notifiés.
+- 🚫 **Gestion des Semaines Sans Cours** : Si aucune session n'est prévue pour une semaine donnée, le script envoie une notification "Pas de cours cette semaine" et évite de renvoyer le même message.
 
-### Récupération et Analyse des Événements iCalendar
-- **Récupération du Calendrier :** Le script effectue une requête HTTP à l'URL iCalendar spécifiée (`ICAL_URL`) et récupère les données du calendrier au format iCalendar.
-- **Analyse des Données :** Les données récupérées sont ensuite analysées à l'aide de la bibliothèque `icalendar`, qui les convertit en une structure de données utilisable en Python.
+## Prérequis
 
-### Gestion des Événements
-- **Modélisation des Événements :** Chaque événement du calendrier est représenté par une instance de la classe `Event`, qui stocke des informations clés comme le résumé, le début, la fin et le lieu de l'événement.
-- **Détection des Modifications :** À chaque exécution, le script compare les événements actuels avec ceux stockés dans le fichier `events.json` (enregistré localement). Cette comparaison permet d'identifier les nouveaux événements ajoutés et ceux qui ont été supprimés depuis la dernière vérification.
+- Python 3.x
+- Bibliothèques Python : `icalendar`, `requests`, `pytz`
 
-### Interaction avec Discord
-- **Préparation des Messages :** Les informations sur les événements (ajoutés, supprimés, et la liste des événements de la semaine suivante) sont formatées en messages Discord.
-- **Messages Embed :** Pour une présentation plus claire et structurée, les messages sont envoyés sous forme d'embeds Discord, qui permettent une meilleure mise en forme et une présentation visuelle améliorée.
-- **Envoi via Webhook :** Les messages préparés sont envoyés au serveur Discord via un webhook (identifié par `DISCORD_WEBHOOK_URL`). Ce mécanisme permet une intégration transparente avec le serveur Discord.
+Pour installer les bibliothèques nécessaires, exécutez la commande suivante :
+```sh
+pip install icalendar requests pytz
+```
 
-### Gestion du Fuseau Horaire
-- **Conversion des Heures :** Les heures des événements sont converties en heure locale (fuseau horaire `Europe/Paris`) pour faciliter leur interprétation par les utilisateurs finaux.
+## Installation
+
+1. Clonez ce dépôt GitHub :
+   ```sh
+   git clone <url_du_dépôt>
+   ```
+2. Naviguez jusqu'au répertoire du projet :
+   ```sh
+   cd ICalendarManager
+   ```
 
 ## Configuration
-- **Configuration Initiale :** Modifiez les constantes `ICAL_URL` et `DISCORD_WEBHOOK_URL` en haut du script pour les adapter à votre calendrier iCalendar et à votre serveur Discord.
 
-## Structure du Code
-- **CalendarManager :** Cette classe gère la récupération, l'analyse et le suivi des événements iCalendar.
-- **DiscordBot :** Cette classe est responsable de la communication avec le serveur Discord, en formatant et en envoyant les messages.
-- **Fonction principale (`main`) :** Point d'entrée du script qui orchestre la récupération des événements, leur comparaison et l'envoi des notifications Discord.
+Modifiez les valeurs suivantes dans le script pour qu'elles correspondent à votre utilisation :
 
-## Automatisation avec Cron
-
-### Vue d'ensemble
-Pour garantir que le script `ICalendarManager` s'exécute régulièrement et automatiquement, vous pouvez utiliser Cron, un planificateur de tâches sous Unix. Cron permet de configurer des tâches (connues sous le nom de cron jobs) pour s'exécuter à des intervalles de temps spécifiés. Cela est particulièrement utile pour surveiller constamment les modifications de votre calendrier iCalendar et envoyer des mises à jour via Discord sans intervention manuelle.
-
-### Configuration de Cron Job
-- **Accédez au Cron :** Ouvrez le cron avec la commande `crontab -e`. Cela ouvrira l'éditeur de cron où vous pouvez ajouter des tâches planifiées.
-- **Ajouter un Cron Job :** Ajoutez une ligne suivant le format : 
-  ```
-  * * * * * /chemin/vers/python3 /chemin/vers/ICalendarManager/script.py
-  ```
-  Remplacez `/chemin/vers/python3` et `/chemin/vers/ICalendarManager/script.py` par les chemins appropriés sur votre système. La structure de temps `* * * * *` définit la fréquence d'exécution. Par exemple, `0 * * * *` exécutera le script à chaque heure pile.
-- **Sauvegardez et Quittez :** Après avoir ajouté la ligne, sauvegardez le fichier et quittez l'éditeur. Le cron job est maintenant configuré et actif.
-
-### Fréquence d'Exécution
-- **Personnalisation :** Adaptez la structure de temps selon vos besoins. Par exemple, pour une exécution toutes les 6 heures, utilisez `0 */6 * * *`.
-- **Précision :** Assurez-vous que la fréquence d'exécution correspond à vos besoins. Une fréquence trop élevée pourrait surcharger le serveur, tandis qu'une fréquence trop faible pourrait manquer des mises à jour importantes.
+- `ICAL_URL` : L'URL du fichier iCalendar à télécharger.
+- `DISCORD_WEBHOOK_URL` : L'URL du webhook Discord où envoyer les notifications.
 
 ## Utilisation
-1. Clonez le dépôt ou téléchargez le script `ICalendarManager`.
-2. Modifiez les variables `ICAL_URL` et `DISCORD_WEBHOOK_URL` avec vos propres informations.
-3. Exécutez le script pour commencer à surveiller les modifications du calendrier et envoyer des mises à jour via Discord.
 
-## Dépendances
-- `icalendar`
-- `datetime`
-- `requests`
-- `json`
-- `pytz`
-- `locale`
+Pour lancer le script, exécutez simplement :
+```sh
+python main.py
+```
+Le script est conçu pour être exécuté régulièrement. Pour automatiser l'exécution, vous pouvez l'intégrer dans le Planificateur de Tâches de Windows.
 
-## Licence et Utilisation
-- **Licence :** Le logiciel est distribué sous une licence spécifique, interdisant l'utilisation commerciale et exigeant la mention de l'auteur original pour toute redistribution ou modification. Consultez le fichier `LICENSE` pour plus de détails.
+### Automatisation sous Windows
+1. Ouvrez le **Planificateur de Tâches**.
+2. Créez une nouvelle tâche de base.
+3. Configurez l'exécution du script `main.py` à l'heure souhaitée.
 
-## Auteur et Contribution
-- **Auteur :** Samy Bensalem - [GitHub](https://github.com/Nyx-Off/ICalendarManager/tree/main).
-- **Contribution :** Les contributions au projet sont encouragées. Pour contribuer, vous pouvez soumettre des pull requests, des rapports de bugs, ou des suggestions d'amélioration.
+### Version Linux
+💡 Une version compatible Linux est prévue prochainement. Elle inclura une configuration pour fonctionner avec un VPS et être automatisée à l'aide de tâches cron.
 
-## Contribution
-Les contributions, telles que les rapports de bugs, les suggestions ou les pull requests, sont les bienvenues. Veuillez vous assurer de respecter les principes directeurs du projet.
+## Structure du Projet
 
-## Remarques
-Ce projet est destiné à être utilisé à des fins non commerciales. Toute utilisation commerciale est strictement interdite.
+- `main.py` : Script principal qui gère le téléchargement, la comparaison et l'envoi des notifications.
+- `events/` : Dossier où sont stockés le fichier `.ics` téléchargé et le fichier JSON contenant les événements envoyés.
+- `sent_events.json` : Fichier JSON pour stocker les événements déjà envoyés afin d'éviter les doublons.
+
+## Améliorations Futures
+
+- **Version Linux** : Préparation d'une version compatible avec Linux pour une utilisation sur serveur.
+- **Exécution continue** : Support pour une exécution continue sur un VPS via cron.
+- **Interface utilisateur** : Ajout d'une interface graphique pour permettre une configuration plus simple.
+
+## Auteurs
+
+Ce projet est maintenu par Nyx-Off. Contributions bienvenues pour améliorer le script et l'adapter à d'autres plateformes. N'hésitez pas à ouvrir des issues ou des pull requests !
+
+## Licence
+
+Ce projet est sous licence MIT. Consultez le fichier `LICENSE` pour plus d'informations.
