@@ -1,253 +1,164 @@
-from icalendar import Calendar
 import datetime
-import requests
-import json
-import pytz
 import locale
+import requests
+import pytz
+from icalendar import Calendar
+import os
+import json
 
-ICAL_URL = 'Ical URL'
-DISCORD_WEBHOOK_URL = 'Discord Webhook URL'
+ICAL_URL = ' '
+DISCORD_WEBHOOK_URL = ' '
+EVENTS_DIR = 'events'
+ICAL_FILE_PATH = os.path.join(EVENTS_DIR, 'calendar.ics')
+SENT_EVENTS_FILE = os.path.join(EVENTS_DIR, 'sent_events.json')
 
+# Fonction pour télécharger les événements du calendrier
+def download_calendar():
+    if not os.path.exists(EVENTS_DIR):
+        os.makedirs(EVENTS_DIR)
+    response = requests.get(ICAL_URL)
+    if response.status_code == 200:
+        with open(ICAL_FILE_PATH, 'wb') as ical_file:
+            ical_file.write(response.content)
+        with open(ICAL_FILE_PATH, 'rb') as ical_file:
+            return Calendar.from_ical(ical_file.read())
+    else:
+        raise Exception("Erreur lors du téléchargement du calendrier : Statut " + str(response.status_code))
 
-locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
+# Fonction pour extraire les événements de la semaine
+def get_week_events(calendar, start_date, end_date):
+    week_events = {}
+    for component in calendar.walk():
+        if component.name == "VEVENT":
+            start = component.get('dtstart').dt
+            end = component.get('dtend').dt
+            summary = component.get('summary')
+            location = component.get('location')
 
-# Classe pour représenter un événement
-class Event:
-    def __init__(self, summary, start, end, location=None):  
-        self.summary = summary
-        self.start = start
-        self.end = end
-        self.location = location  
+            # Convertir en timezone locale si nécessaire
+            local_timezone = pytz.timezone('Europe/Paris')
+            if start.tzinfo is None:
+                start = pytz.utc.localize(start).astimezone(local_timezone)
+                end = pytz.utc.localize(end).astimezone(local_timezone)
+            else:
+                start = start.astimezone(local_timezone)
+                end = end.astimezone(local_timezone)
 
-    def __eq__(self, other):
-        return (self.summary == other.summary and 
-                self.start == other.start and 
-                self.end == other.end and 
-                self.location == other.location)
+            if start_date <= start.date() < end_date:
+                day_key = start.date().isoformat()
+                if day_key not in week_events:
+                    week_events[day_key] = []
+                week_events[day_key].append({
+                    'summary': summary,
+                    'start': start,
+                    'end': end,
+                    'location': location
+                })
+    return week_events
 
-    def to_json(self):
-        return {
-            'summary': self.summary,
-            'start': self.start.isoformat(),
-            'end': self.end.isoformat(),
-            'location': self.location 
-        }
+# Fonction pour comparer les événements (ajoutés/supprimés)
+def compare_events(old_events, new_events):
+    if isinstance(old_events, dict) and old_events.get('status') == 'no_events_this_week':
+        old_events = {}
+    old_set = {frozenset(event.items()) for events in old_events.values() if isinstance(events, list) for event in events}
+    new_set = {frozenset(event.items()) for events in new_events.values() if isinstance(events, list) for event in events}
 
-    @staticmethod
-    def from_json(data):
-        return Event(
-            data['summary'],
-            datetime.datetime.fromisoformat(data['start']),
-            datetime.datetime.fromisoformat(data['end']),
-            data.get('location') 
-        )
+    added = [dict(event) for event in new_set - old_set]
+    removed = [dict(event) for event in old_set - new_set]
 
-# Classe pour gérer le calendrier ICalendar
-class CalendarManager:
-    def __init__(self):
-        self.url = ICAL_URL
-        self.last_events = []
-        
-    def save_events_to_json(self, week_events, filename='events.json'):
-        with open(filename, 'w') as file:
-            json_data = {date: [event.to_json() for event in events] for date, events in week_events.items()}
-            json.dump(json_data, file, indent=4)
+    return added, removed
 
-    def load_events_from_json(self, filename='events.json'):
-        try:
-            with open(filename, 'r') as file:
-                file_content = file.read().strip()
-                if not file_content:
-                    return {}  
-                data = json.loads(file_content)
-                return {date: [Event.from_json(event) for event in events] for date, events in data.items()}
-        except (FileNotFoundError, json.JSONDecodeError):
-            return {}  
+# Fonction pour envoyer des messages sur Discord
+def send_discord_message(content, embeds=None):
+    data = {
+        "content": content,
+    }
+    if embeds:
+        data["embeds"] = embeds
+    response = requests.post(DISCORD_WEBHOOK_URL, json=data)
+    if response.status_code != 204:
+        print(f"Erreur lors de l'envoi du message Discord : {response.status_code} - {response.text}")
 
-    def get_week_days(self, start_date):
-            return [start_date + datetime.timedelta(days=i) for i in range(7)]
-
-    def get_calendar_data(self):
-        response = requests.get(self.url)
-        return Calendar.from_ical(response.content)
-
-    def get_events_next_week(self):
-        calendar = self.get_calendar_data()
-
-        local_timezone = pytz.timezone('Europe/Paris')
-
-        now = datetime.datetime.now(pytz.utc)
-        start_of_this_week = now - datetime.timedelta(days=now.weekday())
-        start_of_next_week = start_of_this_week + datetime.timedelta(days=7)
-        end_of_next_week = start_of_next_week + datetime.timedelta(days=7)
-
-        week_events = {day.date().isoformat(): [] for day in self.get_week_days(start_of_this_week) + self.get_week_days(start_of_next_week)}
-
-        for component in calendar.walk():
-            if component.name == "VEVENT":
-                start = component.get('dtstart').dt
-                end = component.get('dtend').dt
-
-                if start.tzinfo is None or start.tzinfo.utcoffset(start) is None:
-                    start = pytz.utc.localize(start).astimezone(local_timezone)
-                else:
-                    start = start.astimezone(local_timezone)
-
-                if end.tzinfo is None or end.tzinfo.utcoffset(end) is None:
-                    end = pytz.utc.localize(end).astimezone(local_timezone)
-                else:
-                    end = end.astimezone(local_timezone)
-
-                location = component.get('location')
-                if location:
-                    location = str(location)
-
-                if start_of_this_week.date() <= start.date() < end_of_next_week.date():
-                    day_key = start.date().isoformat()
-                    week_events[day_key].append(Event(component.get('summary'), start, end, location))
-
-        return week_events
-    
-
-    def check_for_changes(self, filename='events.json'):
-        current_events = self.get_events_next_week()
-        try:
-            last_events = self.load_events_from_json(filename)
-        except FileNotFoundError:
-            last_events = {}
-
-        added = {}
-        removed = {}
-
-        for date, events in current_events.items():
-            last_events_for_date = last_events.get(date, [])
-            added[date] = [event for event in events if event not in last_events_for_date]
-            removed[date] = [event for event in last_events_for_date if event not in events]
-
-        self.save_events_to_json(current_events, filename)  
-        return added, removed
-    
-    def has_sent_today(self, filename='last_sent.json'):
-        try:
-            with open(filename, 'r') as file:
-                last_sent = datetime.datetime.fromisoformat(json.load(file)['last_sent'])
-                return last_sent.date() == datetime.datetime.now().date()
-        except (FileNotFoundError, ValueError, KeyError):
-            return False
-
-    def update_last_sent(self, filename='last_sent.json'):
-        with open(filename, 'w') as file:
-            json.dump({'last_sent': datetime.datetime.now().isoformat()}, file)
-
-# Classe pour gérer le bot Discord
-class DiscordBot:
-    def __init__(self):
-        self.webhook_url = DISCORD_WEBHOOK_URL
-
-
-    def send_message(self, message):
-        data = {
-            "content": message,
-            "username": "Calendrier Bot"
-        }
-        requests.post(self.webhook_url, json=data)
-
-    def format_events_message(self, week_events):
-        message = "Emploi du temps pour la semaine prochaine:\n"
-        for date, events in week_events.items():
-            if events:  
-                message += f"\n{date}:\n"
-                for event in events:
-                    location_str = f" en {event.location}" if event.location else ""
-                    message += f"  {event.summary} - {event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}{location_str}\n"
-        return message
-
-    def format_change_alert(self, added, removed):
-        embeds = []
-
-        # Pour les événements ajoutés (vert)
-        for date, events in added.items():
-            if events:
-                embed = {
-                    "title": f"Ajouté le {datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%A %d %B %Y')}",
-                    "color": 65280,  # Vert
-                    "fields": []
+# Fonction pour créer des embeds pour Discord
+def create_embeds_for_events(events):
+    embeds = []
+    for date, day_events in events.items():
+        if day_events:
+            embed = {
+                "title": f"📅 {datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%A %d %B %Y')}",
+                "color": 5814783,
+                "fields": []
+            }
+            for event in day_events:
+                location_str = f" en {event['location']}" if event['location'] else ""
+                field = {
+                    "name": event['summary'],
+                    "value": f"De {event['start'].strftime('%H:%M')} à {event['end'].strftime('%H:%M')}{location_str}",
+                    "inline": False
                 }
-                for event in events:
-                    field = {
-                        "name": event.summary,
-                        "value": f"{event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}\n" +
-                                 (f"en salle : {event.location}" if event.location else ""),
-                        "inline": True
-                    }
-                    embed["fields"].append(field)
-                embeds.append(embed)
+                embed["fields"].append(field)
+            embeds.append(embed)
+    return embeds
 
-        # Pour les événements supprimés (rouge)
-        for date, events in removed.items():
-            if events:
-                embed = {
-                    "title": f"Supprimé le {datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%A %d %B %Y')}",
-                    "color": 16711680,  # Rouge
-                    "fields": []
-                }
-                for event in events:
-                    field = {
-                        "name": event.summary,
-                        "value": f"{event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}\n" +
-                                 (f"en salle : {event.location}" if event.location else ""),
-                        "inline": True
-                    }
-                    embed["fields"].append(field)
-                embeds.append(embed)
+# Fonction pour charger les événements envoyés
+def load_sent_events():
+    if os.path.exists(SENT_EVENTS_FILE):
+        with open(SENT_EVENTS_FILE, 'r') as file:
+            return json.load(file)
+    return {}
 
-        data = {
-            "content": "@everyone Changements dans l'emploi du temps",
-            "embeds": embeds
-        }
-        requests.post(self.webhook_url, json=data)
-    
-    def send_embed_message(self, week_events):
-        embeds = []
-        for date, events in week_events.items():
-            if events:
-                embed = {
-                    "title": f"{datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%A %d %B %Y')}",
-                    "color": 52479,
-                    "fields": []
-                }
-                for event in events:
-                    field = {
-                        "name": event.summary,
-                        "value": f"{event.start.strftime('%H:%M')} à {event.end.strftime('%H:%M')}\n" +
-                                 (f"en salle : {event.location}" if event.location else ""),
-                        "inline": True
-                    }
-                    embed["fields"].append(field)
-                embeds.append(embed)
-
-        data = {
-            "content": "@everyone voici l'emploi du temps de la semaine",
-            "embeds": embeds
-        }
-        requests.post(self.webhook_url, json=data)
+# Fonction pour sauvegarder les événements envoyés
+def save_sent_events(events):
+    with open(SENT_EVENTS_FILE, 'w') as file:
+        json.dump(events, file, indent=4)
 
 # Fonction principale
 def main():
-    # Utiliser les URL fournies
-    calendar_manager = CalendarManager()
-    discord_bot = DiscordBot()
-    
-    added, removed = calendar_manager.check_for_changes()
-    if any(added.values()) or any(removed.values()):
-        alert_message = discord_bot.format_change_alert(added, removed)
-        discord_bot.send_message(alert_message)
+    # Définir la locale en français
+    locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
+    try:
+        # Télécharger les événements du calendrier
+        calendar = download_calendar()
+    except Exception as e:
+        print(e)
+        return
 
-    if datetime.datetime.now().weekday() == 4:  # Samedi
-        if not calendar_manager.has_sent_today():
-            week_events = calendar_manager.get_events_next_week()
-            discord_bot.send_embed_message(week_events)
-            calendar_manager.update_last_sent()
+    # Définir la période de la semaine actuelle ou prochaine
+    today = datetime.datetime.now().date()
+    if today.weekday() == 6:  # Ne rien envoyer si on est dimanche
+        print("Aucun envoi le dimanche.")
+        return
+
+    if today.weekday() == 5:  # À partir de samedi, envoyer l'emploi du temps de la semaine prochaine
+        start_of_week = today + datetime.timedelta(days=(7 - today.weekday()))
+    else:
+        start_of_week = today - datetime.timedelta(days=today.weekday())
+    end_of_week = start_of_week + datetime.timedelta(days=7)
+
+    # Obtenir les événements de la semaine
+    new_events = get_week_events(calendar, start_of_week, end_of_week)
+
+    # Charger les événements précédemment envoyés
+    sent_events = load_sent_events()
+
+    # Comparer les événements et éviter les doublons
+    added, removed = compare_events(sent_events, new_events)
+
+    # Envoyer les modifications sur Discord
+    if added or removed:
+        added_embeds = create_embeds_for_events({date: [event for event in new_events.get(date, []) if dict(event) in added] for date in new_events})
+        removed_embeds = create_embeds_for_events({date: [event for event in sent_events.get(date, []) if dict(event) in removed] for date in sent_events})
+        if added_embeds:
+            send_discord_message("🏢 Événements ajoutés :", added_embeds)
+        if removed_embeds:
+            send_discord_message("❌ Événements supprimés :", removed_embeds)
+        # Sauvegarder les nouveaux événements après envoi
+        save_sent_events(new_events)
+    elif not new_events and ('status' not in sent_events or sent_events.get('status') != 'no_events_this_week'):
+        send_discord_message("ℹ️ Pas de cours cette semaine.")
+        save_sent_events({'status': 'no_events_this_week'})
+    else:
+        print("Aucun changement dans les événements de la semaine.")
 
 if __name__ == "__main__":
     main()
