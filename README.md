@@ -1,4 +1,9 @@
-<h1 align="center"> ICalendarManager </h3>
+<h1 align="center"> ICalendarManager 
+
+![Static Badge](https://img.shields.io/badge/Contributeur-1-brightgreen?style=flat&logo=clubhouse&logoColor=white&logoSize=auto) 
+![License](https://img.shields.io/github/license/Nyx-Off/AceVenturaTheGame) 
+![Static Badge](https://img.shields.io/badge/Python-black?style=plastic&logo=python&logoColor=white&logoSize=auto&color=yellow)
+</h1>
 
 <div align="center">
     <img class="Logo" src="https://raw.githubusercontent.com/Nyx-Off/ICalendarManager/main/logo500x500.png" width="500" />
@@ -71,10 +76,8 @@ Le script est conçu pour être exécuté régulièrement. Pour automatiser l'ex
 - **Exécution continue** : Support pour une exécution continue sur un VPS via cron.
 - **Interface utilisateur** : Ajout d'une interface graphique pour permettre une configuration plus simple.
 
-## Auteurs
-
-Ce projet est maintenu par Nyx-Off. Contributions bienvenues pour améliorer le script et l'adapter à d'autres plateformes. N'hésitez pas à ouvrir des issues ou des pull requests !
+## Contribuer
+Si vous avez des suggestions, des améliorations ou si vous trouvez des bugs, n'hésitez pas à soumettre une pull request ou à ouvrir une issue.
 
 ## Licence
-
-Ce projet est sous licence MIT. Consultez le fichier `LICENSE` pour plus d'informations.
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus d'informations.
