@@ -6,8 +6,8 @@ from icalendar import Calendar
 import os
 import json
 
-ICAL_URL = 'https://formations.cci-paris-idf.fr/IntNum/index.php/planning/ical/F7C58369-952C-4F85-BEE0-883FC5F3BF10/'
-DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1106142739579555891/PhrVe8EPN7wweNuUexTjrxgf6wT1MTPySD8FMcmWC0nRZBPpVfeerV_UHpHuMvyl4p0T'
+ICAL_URL = ''
+DISCORD_WEBHOOK_URL = ''
 EVENTS_DIR = 'events'
 ICAL_FILE_PATH = os.path.join(EVENTS_DIR, 'calendar.ics')
 SENT_EVENTS_FILE = os.path.join(EVENTS_DIR, 'sent_events.json')
