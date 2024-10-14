@@ -54,27 +54,50 @@ Pour lancer le script, exécutez simplement :
 ```sh
 python main.py
 ```
-Le script est conçu pour être exécuté régulièrement. Pour automatiser l'exécution, vous pouvez l'intégrer dans le Planificateur de Tâches de Windows.
+Le script est conçu pour être exécuté régulièrement. Pour automatiser l'exécution, vous pouvez l'intégrer dans le Planificateur de Tâches de Windows ou utiliser cron sur Linux.
 
 ### Automatisation sous Windows
 1. Ouvrez le **Planificateur de Tâches**.
 2. Créez une nouvelle tâche de base.
 3. Configurez l'exécution du script `main.py` à l'heure souhaitée.
 
-### Version Linux
-💡 Une version compatible Linux est prévue prochainement. Elle inclura une configuration pour fonctionner avec un VPS et être automatisée à l'aide de tâches cron.
+### Automatisation sous Linux (Debian)
+Pour automatiser l'exécution du script toutes les heures sur un système Linux, créez une tâche cron :
+
+1. Créez un environnement virtuel pour le projet :
+   ```sh
+   python3 -m venv venv
+   ```
+2. Activez l'environnement virtuel :
+   ```sh
+   source venv/bin/activate
+   ```
+3. Installez les dépendances :
+   ```sh
+   pip install icalendar requests pytz
+   ```
+4. Ajoutez une tâche cron pour exécuter le script toutes les heures :
+   ```sh
+   crontab -e
+   ```
+   Puis ajoutez la ligne suivante pour exécuter le script chaque heure :
+   ```
+   0 * * * * /usr/local/IcalendarManager/venv/bin/python /usr/local/IcalendarManager/main.py >> /usr/local/IcalendarManager/events/execution.log 2>&1
+   ```
+   Cette ligne exécute le script toutes les heures et enregistre la sortie dans le fichier `execution.log`.
 
 ## Structure du Projet
 
 - `main.py` : Script principal qui gère le téléchargement, la comparaison et l'envoi des notifications.
 - `events/` : Dossier où sont stockés le fichier `.ics` téléchargé et le fichier JSON contenant les événements envoyés.
 - `sent_events.json` : Fichier JSON pour stocker les événements déjà envoyés afin d'éviter les doublons.
+- `execution.log` : Fichier de log contenant les informations sur les exécutions du script.
 
 ## Améliorations Futures
 
-- **Version Linux** : Préparation d'une version compatible avec Linux pour une utilisation sur serveur.
 - **Exécution continue** : Support pour une exécution continue sur un VPS via cron.
 - **Interface utilisateur** : Ajout d'une interface graphique pour permettre une configuration plus simple.
+- **Améliorations de la version Linux** : Meilleure intégration avec les outils Linux pour une utilisation plus fluide sur serveur.
 
 ## Contribuer
 Si vous avez des suggestions, des améliorations ou si vous trouvez des bugs, n'hésitez pas à soumettre une pull request ou à ouvrir une issue.
