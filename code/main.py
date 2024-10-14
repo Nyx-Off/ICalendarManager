@@ -6,8 +6,8 @@ from icalendar import Calendar
 import os
 import json
 
-ICAL_URL = ' '
-DISCORD_WEBHOOK_URL = ' '
+ICAL_URL = 'https://formations.cci-paris-idf.fr/IntNum/index.php/planning/ical/F7C58369-952C-4F85-BEE0-883FC5F3BF10/'
+DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1106142739579555891/PhrVe8EPN7wweNuUexTjrxgf6wT1MTPySD8FMcmWC0nRZBPpVfeerV_UHpHuMvyl4p0T'
 EVENTS_DIR = 'events'
 ICAL_FILE_PATH = os.path.join(EVENTS_DIR, 'calendar.ics')
 SENT_EVENTS_FILE = os.path.join(EVENTS_DIR, 'sent_events.json')
@@ -103,14 +103,48 @@ def create_embeds_for_events(events):
 # Fonction pour charger les événements envoyés
 def load_sent_events():
     if os.path.exists(SENT_EVENTS_FILE):
-        with open(SENT_EVENTS_FILE, 'r') as file:
-            return json.load(file)
+        try:
+            with open(SENT_EVENTS_FILE, 'r') as file:
+                serialized_events = json.load(file)
+
+            deserialized_events = {}
+            for date, day_events in serialized_events.items():
+                deserialized_day_events = []
+                for event in day_events:
+                    deserialized_event = {
+                        'summary': event['summary'],
+                        'start': datetime.datetime.fromisoformat(event['start']),
+                        'end': datetime.datetime.fromisoformat(event['end']),
+                        'location': event['location']
+                    }
+                    deserialized_day_events.append(deserialized_event)
+                deserialized_events[date] = deserialized_day_events
+
+            return deserialized_events
+        except (json.JSONDecodeError, ValueError):
+            # If file is empty or corrupted, return an empty dict and log the error
+            print("Warning: Could not load sent events, the file might be corrupted.")
+            return {}
     return {}
+
 
 # Fonction pour sauvegarder les événements envoyés
 def save_sent_events(events):
+    serialized_events = {}
+    for date, day_events in events.items():
+        serialized_day_events = []
+        for event in day_events:
+            serialized_event = {
+                'summary': event['summary'],
+                'start': event['start'].isoformat(),
+                'end': event['end'].isoformat(),
+                'location': event['location']
+            }
+            serialized_day_events.append(serialized_event)
+        serialized_events[date] = serialized_day_events
+
     with open(SENT_EVENTS_FILE, 'w') as file:
-        json.dump(events, file, indent=4)
+        json.dump(serialized_events, file, indent=4)
 
 # Fonction principale
 def main():
