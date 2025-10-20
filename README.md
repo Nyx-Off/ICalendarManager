@@ -154,7 +154,7 @@ Le système envoie automatiquement des notifications Discord quand il détecte :
 
 ## 📝 Licence
 
-Ce projet utilise une licence personnalisée. Voir le fichier [LICENSE](LICENSE).
+Ce projet utilise une licence MI2. Voir le fichier [LICENSE](LICENSE).
 
 **Usage non commercial uniquement.**
 
@@ -162,8 +162,8 @@ Ce projet utilise une licence personnalisée. Voir le fichier [LICENSE](LICENSE)
 
 **Samy Bensalem**
 - GitHub : [@Nyx-Off](https://github.com/Nyx-Off)
-- Projet : [ICalendarManager](https://github.com/Nyx-Off/ICalendarManager)
-
+- Site : [Samy BENSALEM](https://bensalemdev.fr/)
+  
 ---
 
 <div align="center">
