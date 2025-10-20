@@ -7,7 +7,7 @@ Interface web moderne pour gérer et afficher automatiquement votre emploi du te
 
 ## ✨ Fonctionnalités
 
-- 🖥️ **Interface Web Moderne** : Design responsive et élégant
+- 🖥️ **Interface Web Moderne** : Design responsive, élégant et dark mode
 - 📱 **Navigation Intuitive** : Parcourez les semaines précédentes et suivantes
 - 🔄 **Mise à Jour Automatique** : Téléchargement et vérification toutes les heures via CRON
 - 🔔 **Notifications Discord** : Alertes détaillées des changements (ajouts, modifications, suppressions)
@@ -15,6 +15,14 @@ Interface web moderne pour gérer et afficher automatiquement votre emploi du te
 - 💾 **Historique** : Conservation des 4 dernières semaines
 - ⚡ **Actualisation Manuelle** : Bouton pour forcer la mise à jour
 - 🎨 **Design Responsive** : Compatible mobile, tablette et desktop
+- ⚙️ **Gestions des Erreurs** : Meilleure gestion des erreurs curl avec messages détaillés
+
+## ⚙️ Corrections des Bugs
+
+- Timeout augmenté à 60s (téléchargement)
+- Timeout connexion défini à 30s
+- Ajout ```CURLOPT_SSL_VERIFYPEER``` pour les certificats SSL 
+- Détection du format ICS (avec ou sans Z) - Si pas de Z, les heures sont directement dans le timezone local
 
 ## 🚀 Installation
 
