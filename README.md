@@ -2,7 +2,6 @@
 
 ![Version](https://img.shields.io/badge/version-2.0-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.0%2B-purple)
-![License](https://img.shields.io/badge/license-Custom-orange)
 
 Interface web moderne pour gérer et afficher automatiquement votre emploi du temps à partir d'un fichier ICS avec notifications Discord des changements.
 
@@ -154,7 +153,7 @@ Le système envoie automatiquement des notifications Discord quand il détecte :
 
 ## 📝 Licence
 
-Ce projet utilise une licence MI2. Voir le fichier [LICENSE](LICENSE).
+Ce projet utilise une licence MIT. Voir le fichier [LICENSE](LICENSE).
 
 **Usage non commercial uniquement.**
 
