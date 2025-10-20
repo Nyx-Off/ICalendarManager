@@ -1,0 +1,996 @@
+[2025-10-13 18:44:25] [ERROR] Erreur download_calendar: URL du calendrier non configurée
+[2025-10-13 18:47:37] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 18:47:37] [INFO] Téléchargement manuel du calendrier effectué
+[2025-10-13 18:48:03] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 18:48:03] [INFO] Téléchargement manuel du calendrier effectué
+[2025-10-13 18:52:49] [INFO] === Début de la vérification automatique ===
+[2025-10-13 18:52:49] [INFO] Téléchargement du calendrier...
+[2025-10-13 18:52:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 18:52:56] [INFO] Première sauvegarde pour la semaine 42
+[2025-10-13 18:52:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-13 18:55:30] [INFO] === Début de la vérification automatique ===
+[2025-10-13 18:55:30] [INFO] Téléchargement du calendrier...
+[2025-10-13 18:55:37] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 18:55:37] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-13 18:55:37] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-13 19:00:02] [INFO] === Début de la vérification automatique ===
+[2025-10-13 19:00:02] [INFO] Téléchargement du calendrier...
+[2025-10-13 19:00:09] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 19:00:09] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-13 19:00:09] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-13 20:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-13 20:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-13 20:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 20:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-13 20:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-13 21:00:34] [INFO] === Début de la vérification automatique ===
+[2025-10-13 21:00:34] [INFO] Téléchargement du calendrier...
+[2025-10-13 21:00:40] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 21:00:40] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-13 21:00:40] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-13 22:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-13 22:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-13 22:00:49] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 22:00:49] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-13 22:00:49] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-13 23:00:38] [INFO] === Début de la vérification automatique ===
+[2025-10-13 23:00:38] [INFO] Téléchargement du calendrier...
+[2025-10-13 23:00:45] [INFO] Calendrier téléchargé avec succès
+[2025-10-13 23:00:45] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-13 23:00:45] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 00:02:39] [INFO] === Début de la vérification automatique ===
+[2025-10-14 00:02:39] [INFO] Téléchargement du calendrier...
+[2025-10-14 00:02:45] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 00:02:45] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 00:02:45] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 01:01:46] [INFO] === Début de la vérification automatique ===
+[2025-10-14 01:01:46] [INFO] Téléchargement du calendrier...
+[2025-10-14 01:01:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 01:01:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 01:01:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 02:00:58] [INFO] === Début de la vérification automatique ===
+[2025-10-14 02:00:58] [INFO] Téléchargement du calendrier...
+[2025-10-14 02:01:04] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 02:01:04] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 02:01:04] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 03:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-14 03:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-14 03:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 03:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 03:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 04:00:40] [INFO] === Début de la vérification automatique ===
+[2025-10-14 04:00:40] [INFO] Téléchargement du calendrier...
+[2025-10-14 04:00:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 04:00:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 04:00:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 05:00:50] [INFO] === Début de la vérification automatique ===
+[2025-10-14 05:00:50] [INFO] Téléchargement du calendrier...
+[2025-10-14 05:00:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 05:00:56] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 05:00:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 06:00:46] [INFO] === Début de la vérification automatique ===
+[2025-10-14 06:00:46] [INFO] Téléchargement du calendrier...
+[2025-10-14 06:00:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 06:00:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 06:00:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 07:01:49] [INFO] === Début de la vérification automatique ===
+[2025-10-14 07:01:49] [INFO] Téléchargement du calendrier...
+[2025-10-14 07:01:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 07:01:56] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 07:01:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 08:01:01] [INFO] === Début de la vérification automatique ===
+[2025-10-14 08:01:01] [INFO] Téléchargement du calendrier...
+[2025-10-14 08:01:08] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 08:01:08] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 08:01:08] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 09:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-14 09:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-14 09:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 09:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 09:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 09:28:59] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 09:28:59] [INFO] Téléchargement manuel du calendrier effectué
+[2025-10-14 10:00:47] [INFO] === Début de la vérification automatique ===
+[2025-10-14 10:00:47] [INFO] Téléchargement du calendrier...
+[2025-10-14 10:00:53] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 10:00:53] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 10:00:53] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 11:00:49] [INFO] === Début de la vérification automatique ===
+[2025-10-14 11:00:49] [INFO] Téléchargement du calendrier...
+[2025-10-14 11:00:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 11:00:56] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 11:00:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 12:02:00] [INFO] === Début de la vérification automatique ===
+[2025-10-14 12:02:00] [INFO] Téléchargement du calendrier...
+[2025-10-14 12:02:06] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 12:02:06] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 12:02:06] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 12:46:05] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 12:46:05] [INFO] Téléchargement manuel du calendrier effectué
+[2025-10-14 13:00:44] [INFO] === Début de la vérification automatique ===
+[2025-10-14 13:00:44] [INFO] Téléchargement du calendrier...
+[2025-10-14 13:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 13:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 13:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 14:00:49] [INFO] === Début de la vérification automatique ===
+[2025-10-14 14:00:49] [INFO] Téléchargement du calendrier...
+[2025-10-14 14:00:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 14:00:56] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 14:00:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 15:00:47] [INFO] === Début de la vérification automatique ===
+[2025-10-14 15:00:47] [INFO] Téléchargement du calendrier...
+[2025-10-14 15:00:54] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 15:00:54] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 15:00:54] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 16:00:39] [INFO] === Début de la vérification automatique ===
+[2025-10-14 16:00:39] [INFO] Téléchargement du calendrier...
+[2025-10-14 16:00:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 16:00:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 16:00:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 17:01:50] [INFO] === Début de la vérification automatique ===
+[2025-10-14 17:01:50] [INFO] Téléchargement du calendrier...
+[2025-10-14 17:01:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 17:01:56] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 17:01:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 18:00:49] [INFO] === Début de la vérification automatique ===
+[2025-10-14 18:00:49] [INFO] Téléchargement du calendrier...
+[2025-10-14 18:00:55] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 18:00:55] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 18:00:55] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 19:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-14 19:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-14 19:00:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 19:00:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 19:00:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 20:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-14 20:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-14 20:00:49] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 20:00:49] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 20:00:49] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 21:00:45] [INFO] === Début de la vérification automatique ===
+[2025-10-14 21:00:45] [INFO] Téléchargement du calendrier...
+[2025-10-14 21:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 21:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 21:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 22:00:37] [INFO] === Début de la vérification automatique ===
+[2025-10-14 22:00:37] [INFO] Téléchargement du calendrier...
+[2025-10-14 22:00:44] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 22:00:44] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 22:00:44] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-14 23:00:40] [INFO] === Début de la vérification automatique ===
+[2025-10-14 23:00:40] [INFO] Téléchargement du calendrier...
+[2025-10-14 23:00:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-14 23:00:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-14 23:00:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 00:02:53] [INFO] === Début de la vérification automatique ===
+[2025-10-15 00:02:53] [INFO] Téléchargement du calendrier...
+[2025-10-15 00:02:59] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 00:02:59] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 00:02:59] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 01:01:26] [INFO] === Début de la vérification automatique ===
+[2025-10-15 01:01:26] [INFO] Téléchargement du calendrier...
+[2025-10-15 01:01:32] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 01:01:32] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 01:01:32] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 02:00:58] [INFO] === Début de la vérification automatique ===
+[2025-10-15 02:00:58] [INFO] Téléchargement du calendrier...
+[2025-10-15 02:01:04] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 02:01:04] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 02:01:04] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 03:00:40] [INFO] === Début de la vérification automatique ===
+[2025-10-15 03:00:40] [INFO] Téléchargement du calendrier...
+[2025-10-15 03:00:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 03:00:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 03:00:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 04:00:45] [INFO] === Début de la vérification automatique ===
+[2025-10-15 04:00:45] [INFO] Téléchargement du calendrier...
+[2025-10-15 04:00:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 04:00:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 04:00:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 05:00:48] [INFO] === Début de la vérification automatique ===
+[2025-10-15 05:00:48] [INFO] Téléchargement du calendrier...
+[2025-10-15 05:00:55] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 05:00:55] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 05:00:55] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 06:00:51] [INFO] === Début de la vérification automatique ===
+[2025-10-15 06:00:51] [INFO] Téléchargement du calendrier...
+[2025-10-15 06:00:58] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 06:00:58] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 06:00:58] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 07:02:00] [INFO] === Début de la vérification automatique ===
+[2025-10-15 07:02:00] [INFO] Téléchargement du calendrier...
+[2025-10-15 07:02:06] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 07:02:06] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 07:02:06] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 08:01:05] [INFO] === Début de la vérification automatique ===
+[2025-10-15 08:01:05] [INFO] Téléchargement du calendrier...
+[2025-10-15 08:01:12] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 08:01:12] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 08:01:12] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 09:00:47] [INFO] === Début de la vérification automatique ===
+[2025-10-15 09:00:47] [INFO] Téléchargement du calendrier...
+[2025-10-15 09:00:54] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 09:00:54] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 09:00:54] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 10:00:48] [INFO] === Début de la vérification automatique ===
+[2025-10-15 10:00:48] [INFO] Téléchargement du calendrier...
+[2025-10-15 10:00:55] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 10:00:55] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 10:00:55] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 11:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-15 11:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-15 11:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 11:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 11:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 12:01:47] [INFO] === Début de la vérification automatique ===
+[2025-10-15 12:01:47] [INFO] Téléchargement du calendrier...
+[2025-10-15 12:01:53] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 12:01:53] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 12:01:53] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 13:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-15 13:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-15 13:00:49] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 13:00:49] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 13:00:49] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 14:00:51] [INFO] === Début de la vérification automatique ===
+[2025-10-15 14:00:51] [INFO] Téléchargement du calendrier...
+[2025-10-15 14:00:58] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 14:00:58] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 14:00:58] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 15:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-15 15:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-15 15:00:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 15:00:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 15:00:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 16:00:50] [INFO] === Début de la vérification automatique ===
+[2025-10-15 16:00:50] [INFO] Téléchargement du calendrier...
+[2025-10-15 16:01:07] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 16:01:07] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 16:01:07] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 17:00:04] [INFO] === Début de la vérification automatique ===
+[2025-10-15 17:00:04] [INFO] Téléchargement du calendrier...
+[2025-10-15 17:00:11] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 17:00:11] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 17:00:11] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 18:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-15 18:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-15 18:00:49] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 18:00:49] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 18:00:49] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 19:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-15 19:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-15 19:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 19:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 19:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 20:00:37] [INFO] === Début de la vérification automatique ===
+[2025-10-15 20:00:37] [INFO] Téléchargement du calendrier...
+[2025-10-15 20:00:44] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 20:00:44] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 20:00:44] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 21:00:40] [INFO] === Début de la vérification automatique ===
+[2025-10-15 21:00:40] [INFO] Téléchargement du calendrier...
+[2025-10-15 21:00:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 21:00:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 21:00:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 22:00:45] [INFO] === Début de la vérification automatique ===
+[2025-10-15 22:00:45] [INFO] Téléchargement du calendrier...
+[2025-10-15 22:00:51] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 22:00:51] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 22:00:51] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-15 23:00:33] [INFO] === Début de la vérification automatique ===
+[2025-10-15 23:00:33] [INFO] Téléchargement du calendrier...
+[2025-10-15 23:00:39] [INFO] Calendrier téléchargé avec succès
+[2025-10-15 23:00:39] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-15 23:00:39] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 00:03:03] [INFO] === Début de la vérification automatique ===
+[2025-10-16 00:03:03] [INFO] Téléchargement du calendrier...
+[2025-10-16 00:03:09] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 00:03:09] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 00:03:09] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 01:01:28] [INFO] === Début de la vérification automatique ===
+[2025-10-16 01:01:28] [INFO] Téléchargement du calendrier...
+[2025-10-16 01:01:34] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 01:01:34] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 01:01:34] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 02:00:54] [INFO] === Début de la vérification automatique ===
+[2025-10-16 02:00:54] [INFO] Téléchargement du calendrier...
+[2025-10-16 02:01:00] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 02:01:00] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 02:01:00] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 03:00:44] [INFO] === Début de la vérification automatique ===
+[2025-10-16 03:00:44] [INFO] Téléchargement du calendrier...
+[2025-10-16 03:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 03:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 03:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 04:00:36] [INFO] === Début de la vérification automatique ===
+[2025-10-16 04:00:36] [INFO] Téléchargement du calendrier...
+[2025-10-16 04:00:42] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 04:00:42] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 04:00:42] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 05:00:46] [INFO] === Début de la vérification automatique ===
+[2025-10-16 05:00:46] [INFO] Téléchargement du calendrier...
+[2025-10-16 05:00:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 05:00:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 05:00:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 06:00:50] [INFO] === Début de la vérification automatique ===
+[2025-10-16 06:00:50] [INFO] Téléchargement du calendrier...
+[2025-10-16 06:00:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 06:00:56] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 06:00:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 07:01:58] [INFO] === Début de la vérification automatique ===
+[2025-10-16 07:01:58] [INFO] Téléchargement du calendrier...
+[2025-10-16 07:02:04] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 07:02:04] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 07:02:04] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 08:00:55] [INFO] === Début de la vérification automatique ===
+[2025-10-16 08:00:55] [INFO] Téléchargement du calendrier...
+[2025-10-16 08:01:01] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 08:01:01] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 08:01:01] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 09:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-16 09:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-16 09:00:49] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 09:00:49] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 09:00:49] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 10:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-16 10:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-16 10:00:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 10:00:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 10:00:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 11:00:44] [INFO] === Début de la vérification automatique ===
+[2025-10-16 11:00:44] [INFO] Téléchargement du calendrier...
+[2025-10-16 11:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 11:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 11:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 12:01:39] [INFO] === Début de la vérification automatique ===
+[2025-10-16 12:01:39] [INFO] Téléchargement du calendrier...
+[2025-10-16 12:01:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 12:01:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 12:01:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 13:00:49] [INFO] === Début de la vérification automatique ===
+[2025-10-16 13:00:49] [INFO] Téléchargement du calendrier...
+[2025-10-16 13:00:55] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 13:00:55] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 13:00:55] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 14:00:52] [INFO] === Début de la vérification automatique ===
+[2025-10-16 14:00:52] [INFO] Téléchargement du calendrier...
+[2025-10-16 14:00:58] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 14:00:58] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 14:00:58] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 15:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-16 15:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-16 15:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 15:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 15:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 16:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-16 16:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-16 16:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 16:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 16:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 17:02:00] [INFO] === Début de la vérification automatique ===
+[2025-10-16 17:02:00] [INFO] Téléchargement du calendrier...
+[2025-10-16 17:02:06] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 17:02:06] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 17:02:06] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 18:00:46] [INFO] === Début de la vérification automatique ===
+[2025-10-16 18:00:46] [INFO] Téléchargement du calendrier...
+[2025-10-16 18:00:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 18:00:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 18:00:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 19:00:45] [INFO] === Début de la vérification automatique ===
+[2025-10-16 19:00:45] [INFO] Téléchargement du calendrier...
+[2025-10-16 19:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 19:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 19:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 20:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-16 20:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-16 20:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 20:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 20:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 21:00:34] [INFO] === Début de la vérification automatique ===
+[2025-10-16 21:00:34] [INFO] Téléchargement du calendrier...
+[2025-10-16 21:00:41] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 21:00:41] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 21:00:41] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 22:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-16 22:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-16 22:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 22:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 22:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-16 23:00:34] [INFO] === Début de la vérification automatique ===
+[2025-10-16 23:00:34] [INFO] Téléchargement du calendrier...
+[2025-10-16 23:00:41] [INFO] Calendrier téléchargé avec succès
+[2025-10-16 23:00:41] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-16 23:00:41] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 00:02:41] [INFO] === Début de la vérification automatique ===
+[2025-10-17 00:02:41] [INFO] Téléchargement du calendrier...
+[2025-10-17 00:02:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 00:02:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 00:02:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 01:01:33] [INFO] === Début de la vérification automatique ===
+[2025-10-17 01:01:33] [INFO] Téléchargement du calendrier...
+[2025-10-17 01:01:40] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 01:01:40] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 01:01:40] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 02:01:02] [INFO] === Début de la vérification automatique ===
+[2025-10-17 02:01:02] [INFO] Téléchargement du calendrier...
+[2025-10-17 02:01:09] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 02:01:09] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 02:01:09] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 03:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-17 03:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-17 03:00:49] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 03:00:49] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 03:00:49] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 04:00:38] [INFO] === Début de la vérification automatique ===
+[2025-10-17 04:00:38] [INFO] Téléchargement du calendrier...
+[2025-10-17 04:00:44] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 04:00:44] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 04:00:44] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 05:00:50] [INFO] === Début de la vérification automatique ===
+[2025-10-17 05:00:50] [INFO] Téléchargement du calendrier...
+[2025-10-17 05:00:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 05:00:56] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 05:00:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 06:00:48] [INFO] === Début de la vérification automatique ===
+[2025-10-17 06:00:48] [INFO] Téléchargement du calendrier...
+[2025-10-17 06:00:54] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 06:00:54] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 06:00:54] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 07:01:58] [INFO] === Début de la vérification automatique ===
+[2025-10-17 07:01:58] [INFO] Téléchargement du calendrier...
+[2025-10-17 07:02:04] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 07:02:04] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 07:02:04] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 08:00:52] [INFO] === Début de la vérification automatique ===
+[2025-10-17 08:00:52] [INFO] Téléchargement du calendrier...
+[2025-10-17 08:00:59] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 08:00:59] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 08:00:59] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 09:00:44] [INFO] === Début de la vérification automatique ===
+[2025-10-17 09:00:44] [INFO] Téléchargement du calendrier...
+[2025-10-17 09:00:51] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 09:00:51] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 09:00:51] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 10:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-17 10:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-17 10:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 10:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 10:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 11:00:39] [INFO] === Début de la vérification automatique ===
+[2025-10-17 11:00:39] [INFO] Téléchargement du calendrier...
+[2025-10-17 11:00:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 11:00:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 11:00:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 12:01:44] [INFO] === Début de la vérification automatique ===
+[2025-10-17 12:01:44] [INFO] Téléchargement du calendrier...
+[2025-10-17 12:01:51] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 12:01:51] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 12:01:51] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 13:00:46] [INFO] === Début de la vérification automatique ===
+[2025-10-17 13:00:46] [INFO] Téléchargement du calendrier...
+[2025-10-17 13:00:53] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 13:00:53] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 13:00:53] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 14:00:46] [INFO] === Début de la vérification automatique ===
+[2025-10-17 14:00:46] [INFO] Téléchargement du calendrier...
+[2025-10-17 14:00:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 14:00:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 14:00:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 15:00:39] [INFO] === Début de la vérification automatique ===
+[2025-10-17 15:00:39] [INFO] Téléchargement du calendrier...
+[2025-10-17 15:00:45] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 15:00:45] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 15:00:45] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 16:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-17 16:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-17 16:00:49] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 16:00:49] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 16:00:49] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 17:01:59] [INFO] === Début de la vérification automatique ===
+[2025-10-17 17:01:59] [INFO] Téléchargement du calendrier...
+[2025-10-17 17:02:06] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 17:02:06] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 17:02:06] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 18:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-17 18:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-17 18:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 18:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 18:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 19:00:46] [INFO] === Début de la vérification automatique ===
+[2025-10-17 19:00:46] [INFO] Téléchargement du calendrier...
+[2025-10-17 19:00:53] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 19:00:53] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 19:00:53] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 20:00:36] [INFO] === Début de la vérification automatique ===
+[2025-10-17 20:00:36] [INFO] Téléchargement du calendrier...
+[2025-10-17 20:00:42] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 20:00:42] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 20:00:42] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 21:00:39] [INFO] === Début de la vérification automatique ===
+[2025-10-17 21:00:39] [INFO] Téléchargement du calendrier...
+[2025-10-17 21:00:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 21:00:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 21:00:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 22:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-17 22:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-17 22:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 22:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 22:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-17 23:00:35] [INFO] === Début de la vérification automatique ===
+[2025-10-17 23:00:35] [INFO] Téléchargement du calendrier...
+[2025-10-17 23:00:41] [INFO] Calendrier téléchargé avec succès
+[2025-10-17 23:00:41] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-17 23:00:41] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 00:02:38] [INFO] === Début de la vérification automatique ===
+[2025-10-18 00:02:38] [INFO] Téléchargement du calendrier...
+[2025-10-18 00:02:44] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 00:02:44] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 00:02:44] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 00:02:44] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 01:01:54] [INFO] === Début de la vérification automatique ===
+[2025-10-18 01:01:54] [INFO] Téléchargement du calendrier...
+[2025-10-18 01:02:00] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 01:02:00] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 01:02:00] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 01:02:00] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 02:00:51] [INFO] === Début de la vérification automatique ===
+[2025-10-18 02:00:51] [INFO] Téléchargement du calendrier...
+[2025-10-18 02:00:57] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 02:00:57] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 02:00:57] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 02:00:57] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 03:00:40] [INFO] === Début de la vérification automatique ===
+[2025-10-18 03:00:40] [INFO] Téléchargement du calendrier...
+[2025-10-18 03:00:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 03:00:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 03:00:46] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 03:00:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 04:00:36] [INFO] === Début de la vérification automatique ===
+[2025-10-18 04:00:36] [INFO] Téléchargement du calendrier...
+[2025-10-18 04:00:43] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 04:00:43] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 04:00:43] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 04:00:43] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 05:00:46] [INFO] === Début de la vérification automatique ===
+[2025-10-18 05:00:46] [INFO] Téléchargement du calendrier...
+[2025-10-18 05:00:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 05:00:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 05:00:52] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 05:00:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 06:00:59] [INFO] === Début de la vérification automatique ===
+[2025-10-18 06:00:59] [INFO] Téléchargement du calendrier...
+[2025-10-18 06:01:05] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 06:01:05] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 06:01:05] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 06:01:05] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 07:01:40] [INFO] === Début de la vérification automatique ===
+[2025-10-18 07:01:40] [INFO] Téléchargement du calendrier...
+[2025-10-18 07:01:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 07:01:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 07:01:47] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 07:01:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 08:00:49] [INFO] === Début de la vérification automatique ===
+[2025-10-18 08:00:49] [INFO] Téléchargement du calendrier...
+[2025-10-18 08:00:55] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 08:00:55] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 08:00:55] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 08:00:55] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 09:00:40] [INFO] === Début de la vérification automatique ===
+[2025-10-18 09:00:40] [INFO] Téléchargement du calendrier...
+[2025-10-18 09:00:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 09:00:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 09:00:47] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 09:00:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 10:00:35] [INFO] === Début de la vérification automatique ===
+[2025-10-18 10:00:35] [INFO] Téléchargement du calendrier...
+[2025-10-18 10:00:41] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 10:00:41] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 10:00:41] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 10:00:41] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 11:00:39] [INFO] === Début de la vérification automatique ===
+[2025-10-18 11:00:39] [INFO] Téléchargement du calendrier...
+[2025-10-18 11:00:46] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 11:00:46] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 11:00:46] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 11:00:46] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 12:01:56] [INFO] === Début de la vérification automatique ===
+[2025-10-18 12:01:56] [INFO] Téléchargement du calendrier...
+[2025-10-18 12:02:03] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 12:02:03] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 12:02:03] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 12:02:03] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 13:00:39] [INFO] === Début de la vérification automatique ===
+[2025-10-18 13:00:39] [INFO] Téléchargement du calendrier...
+[2025-10-18 13:00:45] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 13:00:45] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 13:00:45] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 13:00:45] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 14:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-18 14:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-18 14:00:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 14:00:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 14:00:47] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 14:00:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 15:00:35] [INFO] === Début de la vérification automatique ===
+[2025-10-18 15:00:35] [INFO] Téléchargement du calendrier...
+[2025-10-18 15:00:41] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 15:00:41] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 15:00:41] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 15:00:41] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 16:00:39] [INFO] === Début de la vérification automatique ===
+[2025-10-18 16:00:39] [INFO] Téléchargement du calendrier...
+[2025-10-18 16:00:44] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 16:00:44] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 16:00:44] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 16:00:44] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 17:01:39] [INFO] === Début de la vérification automatique ===
+[2025-10-18 17:01:39] [INFO] Téléchargement du calendrier...
+[2025-10-18 17:01:45] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 17:01:45] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 17:01:45] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 17:01:45] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 18:00:49] [INFO] === Début de la vérification automatique ===
+[2025-10-18 18:00:49] [INFO] Téléchargement du calendrier...
+[2025-10-18 18:00:56] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 18:00:56] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 18:00:56] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 18:00:56] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 19:00:38] [INFO] === Début de la vérification automatique ===
+[2025-10-18 19:00:38] [INFO] Téléchargement du calendrier...
+[2025-10-18 19:00:44] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 19:00:44] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 19:00:44] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 19:00:44] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 20:00:41] [INFO] === Début de la vérification automatique ===
+[2025-10-18 20:00:41] [INFO] Téléchargement du calendrier...
+[2025-10-18 20:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 20:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 20:00:48] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 20:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 21:00:36] [INFO] === Début de la vérification automatique ===
+[2025-10-18 21:00:36] [INFO] Téléchargement du calendrier...
+[2025-10-18 21:00:42] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 21:00:42] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 21:00:42] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 21:00:42] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 22:00:45] [INFO] === Début de la vérification automatique ===
+[2025-10-18 22:00:45] [INFO] Téléchargement du calendrier...
+[2025-10-18 22:00:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 22:00:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 22:00:52] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 22:00:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-18 23:00:31] [INFO] === Début de la vérification automatique ===
+[2025-10-18 23:00:31] [INFO] Téléchargement du calendrier...
+[2025-10-18 23:00:38] [INFO] Calendrier téléchargé avec succès
+[2025-10-18 23:00:38] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-18 23:00:38] [INFO] Samedi détecté, vérification de la semaine prochaine...
+[2025-10-18 23:00:38] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 00:02:14] [INFO] === Début de la vérification automatique ===
+[2025-10-19 00:02:14] [INFO] Téléchargement du calendrier...
+[2025-10-19 00:02:20] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 00:02:20] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 00:02:20] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 01:01:32] [INFO] === Début de la vérification automatique ===
+[2025-10-19 01:01:32] [INFO] Téléchargement du calendrier...
+[2025-10-19 01:01:39] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 01:01:39] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 01:01:39] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 02:01:06] [INFO] === Début de la vérification automatique ===
+[2025-10-19 02:01:06] [INFO] Téléchargement du calendrier...
+[2025-10-19 02:01:13] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 02:01:13] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 02:01:13] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 03:00:34] [INFO] === Début de la vérification automatique ===
+[2025-10-19 03:00:34] [INFO] Téléchargement du calendrier...
+[2025-10-19 03:00:40] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 03:00:40] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 03:00:40] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 04:00:38] [INFO] === Début de la vérification automatique ===
+[2025-10-19 04:00:38] [INFO] Téléchargement du calendrier...
+[2025-10-19 04:00:44] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 04:00:44] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 04:00:44] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 05:00:45] [INFO] === Début de la vérification automatique ===
+[2025-10-19 05:00:45] [INFO] Téléchargement du calendrier...
+[2025-10-19 05:00:52] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 05:00:52] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 05:00:52] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 06:00:48] [INFO] === Début de la vérification automatique ===
+[2025-10-19 06:00:48] [INFO] Téléchargement du calendrier...
+[2025-10-19 06:00:55] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 06:00:55] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 06:00:55] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 07:01:29] [INFO] === Début de la vérification automatique ===
+[2025-10-19 07:01:29] [INFO] Téléchargement du calendrier...
+[2025-10-19 07:01:36] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 07:01:36] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 07:01:36] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 08:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-19 08:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-19 08:00:50] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 08:00:50] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 08:00:50] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 09:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-19 09:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-19 09:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 09:00:48] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 09:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 10:00:45] [INFO] === Début de la vérification automatique ===
+[2025-10-19 10:00:45] [INFO] Téléchargement du calendrier...
+[2025-10-19 10:00:51] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 10:00:51] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 10:00:51] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 11:00:40] [INFO] === Début de la vérification automatique ===
+[2025-10-19 11:00:40] [INFO] Téléchargement du calendrier...
+[2025-10-19 11:00:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 11:00:47] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 11:00:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 12:01:38] [INFO] === Début de la vérification automatique ===
+[2025-10-19 12:01:38] [INFO] Téléchargement du calendrier...
+[2025-10-19 12:01:44] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 12:01:44] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 12:01:44] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 13:00:40] [INFO] === Début de la vérification automatique ===
+[2025-10-19 13:00:40] [INFO] Téléchargement du calendrier...
+[2025-10-19 13:00:55] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 13:00:55] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 13:00:55] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 14:00:04] [INFO] === Début de la vérification automatique ===
+[2025-10-19 14:00:04] [INFO] Téléchargement du calendrier...
+[2025-10-19 14:00:34] [ERROR] ERREUR: Erreur téléchargement calendrier (Code: 0)
+[2025-10-19 14:00:34] [INFO] === Vérification terminée avec erreur ===
+
+[2025-10-19 15:00:18] [INFO] === Début de la vérification automatique ===
+[2025-10-19 15:00:18] [INFO] Téléchargement du calendrier...
+[2025-10-19 15:00:28] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 15:00:28] [INFO] Changements détectés pour la semaine 42
+[2025-10-19 15:00:28] [INFO] - Ajoutés: 0
+[2025-10-19 15:00:28] [INFO] - Supprimés: 14
+[2025-10-19 15:00:28] [INFO] - Modifiés: 0
+[2025-10-19 15:00:29] [INFO] Notification Discord envoyée avec succès
+[2025-10-19 15:00:29] [INFO] Historique mis à jour avec succès
+[2025-10-19 15:00:29] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 16:00:03] [INFO] === Début de la vérification automatique ===
+[2025-10-19 16:00:03] [INFO] Téléchargement du calendrier...
+[2025-10-19 16:00:33] [ERROR] ERREUR: Erreur téléchargement calendrier (Code: 0)
+[2025-10-19 16:00:33] [INFO] === Vérification terminée avec erreur ===
+
+[2025-10-19 17:00:18] [INFO] === Début de la vérification automatique ===
+[2025-10-19 17:00:18] [INFO] Téléchargement du calendrier...
+[2025-10-19 17:00:48] [ERROR] ERREUR: Erreur téléchargement calendrier (Code: 0)
+[2025-10-19 17:00:48] [INFO] === Vérification terminée avec erreur ===
+
+[2025-10-19 18:00:20] [INFO] === Début de la vérification automatique ===
+[2025-10-19 18:00:20] [INFO] Téléchargement du calendrier...
+[2025-10-19 18:00:30] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 18:00:30] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 18:00:30] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 19:00:03] [INFO] === Début de la vérification automatique ===
+[2025-10-19 19:00:03] [INFO] Téléchargement du calendrier...
+[2025-10-19 19:00:18] [INFO] Calendrier téléchargé avec succès
+[2025-10-19 19:00:18] [INFO] Aucun changement détecté pour la semaine 42
+[2025-10-19 19:00:18] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-19 20:00:04] [INFO] === Début de la vérification automatique ===
+[2025-10-19 20:00:04] [INFO] Téléchargement du calendrier...
+[2025-10-19 20:00:34] [ERROR] ERREUR: Erreur téléchargement calendrier (Code: 0)
+[2025-10-19 20:00:34] [INFO] === Vérification terminée avec erreur ===
+
+[2025-10-19 21:00:19] [INFO] === Début de la vérification automatique ===
+[2025-10-19 21:00:19] [INFO] Téléchargement du calendrier...
+[2025-10-19 21:00:49] [ERROR] ERREUR: Erreur téléchargement calendrier (Code: 0)
+[2025-10-19 21:00:49] [INFO] === Vérification terminée avec erreur ===
+
+[2025-10-19 22:00:17] [INFO] === Début de la vérification automatique ===
+[2025-10-19 22:00:17] [INFO] Téléchargement du calendrier...
+[2025-10-19 22:00:47] [ERROR] ERREUR: Erreur téléchargement calendrier (Code: 0)
+[2025-10-19 22:00:47] [INFO] === Vérification terminée avec erreur ===
+
+[2025-10-19 23:00:16] [INFO] === Début de la vérification automatique ===
+[2025-10-19 23:00:16] [INFO] Téléchargement du calendrier...
+[2025-10-19 23:00:46] [ERROR] ERREUR: Erreur téléchargement calendrier (Code: 0)
+[2025-10-19 23:00:46] [INFO] === Vérification terminée avec erreur ===
+
+[2025-10-20 00:00:46] [INFO] === Début de la vérification automatique ===
+[2025-10-20 00:00:46] [INFO] Téléchargement du calendrier...
+[2025-10-20 00:01:16] [ERROR] ERREUR: Erreur téléchargement calendrier (Code: 0)
+[2025-10-20 00:01:16] [INFO] === Vérification terminée avec erreur ===
+
+[2025-10-20 01:00:22] [INFO] === Début de la vérification automatique ===
+[2025-10-20 01:00:22] [INFO] Téléchargement du calendrier...
+[2025-10-20 01:00:29] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 01:00:29] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 01:00:29] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-20 02:00:56] [INFO] === Début de la vérification automatique ===
+[2025-10-20 02:00:56] [INFO] Téléchargement du calendrier...
+[2025-10-20 02:01:02] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 02:01:02] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 02:01:02] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-20 03:00:37] [INFO] === Début de la vérification automatique ===
+[2025-10-20 03:00:37] [INFO] Téléchargement du calendrier...
+[2025-10-20 03:00:43] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 03:00:43] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 03:00:43] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-20 04:00:36] [INFO] === Début de la vérification automatique ===
+[2025-10-20 04:00:36] [INFO] Téléchargement du calendrier...
+[2025-10-20 04:00:42] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 04:00:42] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 04:00:42] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-20 05:00:42] [INFO] === Début de la vérification automatique ===
+[2025-10-20 05:00:42] [INFO] Téléchargement du calendrier...
+[2025-10-20 05:00:48] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 05:00:48] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 05:00:48] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-20 06:01:00] [INFO] === Début de la vérification automatique ===
+[2025-10-20 06:01:00] [INFO] Téléchargement du calendrier...
+[2025-10-20 06:01:06] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 06:01:06] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 06:01:06] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-20 07:01:40] [INFO] === Début de la vérification automatique ===
+[2025-10-20 07:01:40] [INFO] Téléchargement du calendrier...
+[2025-10-20 07:01:47] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 07:01:47] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 07:01:47] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-20 08:01:19] [INFO] === Début de la vérification automatique ===
+[2025-10-20 08:01:19] [INFO] Téléchargement du calendrier...
+[2025-10-20 08:01:26] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 08:01:26] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 08:01:26] [INFO] === Vérification terminée avec succès ===
+
+[2025-10-20 09:00:43] [INFO] === Début de la vérification automatique ===
+[2025-10-20 09:00:43] [INFO] Téléchargement du calendrier...
+[2025-10-20 09:00:49] [INFO] Calendrier téléchargé avec succès
+[2025-10-20 09:00:49] [INFO] Aucun changement détecté pour la semaine 43
+[2025-10-20 09:00:49] [INFO] === Vérification terminée avec succès ===
+
