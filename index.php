@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="container">
+        <div class="header-top">
+            <button id="darkModeToggle" class="dark-mode-toggle" title="Activer le mode sombre">🌙</button>
+        </div>
+
         <header>
             <h1>📅 Emploi du Temps</h1>
             <p class="subtitle">Gestion automatique de votre calendrier ICS</p>

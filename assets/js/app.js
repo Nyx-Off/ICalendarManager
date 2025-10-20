@@ -19,11 +19,50 @@ class CalendarApp {
     }
     
     init() {
+        // Initialiser le dark mode
+        this.initDarkMode();
+        
+        // Event listeners
         document.getElementById('prevWeek').addEventListener('click', () => this.changeWeek(-1));
         document.getElementById('nextWeek').addEventListener('click', () => this.changeWeek(1));
         document.getElementById('todayBtn').addEventListener('click', () => this.goToToday());
         document.getElementById('refreshBtn').addEventListener('click', () => this.refresh());
+        
         this.loadEvents();
+    }
+    
+    initDarkMode() {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        // Vérifier la préférence sauvegardée
+        const savedMode = localStorage.getItem('darkMode');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedMode !== null) {
+            const isDark = savedMode === 'true';
+            this.setDarkMode(isDark);
+        } else if (prefersDark) {
+            this.setDarkMode(true);
+        }
+        
+        // Event listener pour le bouton
+        darkModeToggle.addEventListener('click', () => {
+            const isDarkNow = document.documentElement.classList.contains('dark-mode');
+            this.setDarkMode(!isDarkNow);
+        });
+    }
+    
+    setDarkMode(isDark) {
+        if (isDark) {
+            document.documentElement.classList.add('dark-mode');
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeToggle').textContent = '☀️';
+        } else {
+            document.documentElement.classList.remove('dark-mode');
+            document.body.classList.remove('dark-mode');
+            document.getElementById('darkModeToggle').textContent = '🌙';
+        }
+        localStorage.setItem('darkMode', isDark);
     }
     
     changeWeek(offset) {

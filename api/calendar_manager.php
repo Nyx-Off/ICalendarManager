@@ -2,17 +2,31 @@
 class CalendarManager {
     public static function downloadCalendar() {
         if (empty(ICAL_URL)) throw new Exception("URL du calendrier non configurée");
+        
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, ICAL_URL);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        
         $content = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlError = curl_error($ch);
+        $curlErrno = curl_errno($ch);
+        
         curl_close($ch);
-        if ($httpCode !== 200 || $content === false) {
-            throw new Exception("Erreur téléchargement calendrier (Code: {$httpCode})");
+        
+        if ($curlErrno !== 0) {
+            throw new Exception("Erreur curl: {$curlError} (Code: {$curlErrno})");
         }
+        
+        if ($httpCode !== 200 || $content === false) {
+            throw new Exception("Erreur téléchargement calendrier (HTTP {$httpCode})");
+        }
+        
         file_put_contents(ICAL_FILE, $content);
         logMessage("Calendrier téléchargé avec succès");
         return $content;
@@ -51,7 +65,10 @@ class CalendarManager {
     }
     
     private static function parseICSDate($dateString) {
+        // Détecter si c'est UTC (se termine par Z)
+        $isUTC = substr($dateString, -1) === 'Z';
         $dateString = str_replace(['T', 'Z'], ['', ''], $dateString);
+        
         if (strlen($dateString) >= 14) {
             $year = substr($dateString, 0, 4);
             $month = substr($dateString, 4, 2);
@@ -59,8 +76,15 @@ class CalendarManager {
             $hour = substr($dateString, 8, 2);
             $minute = substr($dateString, 10, 2);
             $second = substr($dateString, 12, 2);
-            $dt = new DateTime("{$year}-{$month}-{$day} {$hour}:{$minute}:{$second}", new DateTimeZone('UTC'));
-            $dt->setTimezone(new DateTimeZone(TIMEZONE));
+            
+            if ($isUTC) {
+                // UTC -> convertir en timezone local
+                $dt = new DateTime("{$year}-{$month}-{$day} {$hour}:{$minute}:{$second}", new DateTimeZone('UTC'));
+                $dt->setTimezone(new DateTimeZone(TIMEZONE));
+            } else {
+                // Déjà dans le bon timezone (Europe/Paris via TZID)
+                $dt = new DateTime("{$year}-{$month}-{$day} {$hour}:{$minute}:{$second}", new DateTimeZone(TIMEZONE));
+            }
             return $dt;
         }
         return null;
@@ -243,6 +267,7 @@ class CalendarManager {
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
         $result = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
